@@ -4,5 +4,6 @@ export class Facture {
   montontFacture : number ;
   dateFacture : Date ;
   active :Boolean ;
+  id_user:number;
 
 }
