@@ -10,13 +10,15 @@ import { ReclamationComponent } from './reclamation/reclamation.component';
 import { RayonComponent } from './rayon/rayon.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
+import {ProduitMainComponent} from "./produit-main/produit-main.component";
 
 
 const routes: Routes = [
+  {path:'', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'user', component: UserComponent},
-  {path: 'produit', component: ProduitComponent},
+  {path: 'produit', component: ProduitMainComponent},
   {path: 'stock', component: StockComponent},
   {path: 'reclamation', component: ReclamationComponent},
   {path: 'rayon', component: RayonComponent},

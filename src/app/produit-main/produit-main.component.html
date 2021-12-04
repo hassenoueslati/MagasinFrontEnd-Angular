@@ -1,0 +1,15 @@
+<br>
+&nbsp;
+<button class="btn btn-outline-primary" (click)="showForm()">{{buttonValue}}</button>
+<div *ngIf="showFormTemplate">
+  <h2>Form Produit</h2>
+  <app-produit-form-add (addEvent)="save($event)" [produit]="inputProduit"></app-produit-form-add>
+</div>
+<div class="row" *ngIf="!showFormTemplate">
+  <app-produit *ngFor="let currentProduit of listProduit"
+               [produit]="currentProduit"
+               (deleteNotifEvent)="delete($event)"
+               (updateNotifEvent)="update($event)"
+               class="col-md-3">
+  </app-produit>
+</div>

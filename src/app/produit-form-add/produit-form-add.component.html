@@ -1,0 +1,50 @@
+<form class="w-50 mx-auto" #f="ngForm">
+  <div class="form-group">
+    <label for="Code">Code </label>
+    <input type="text" name="Code" id="Code" class="form-control"
+           #nt="ngModel" required minlength="3" [(ngModel)]="produit.code">
+    <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+      <div *ngIf="nt.hasError('required')"> le Code est obligatoire</div>
+      <div *ngIf="nt.hasError('minlength')">La longueur minimale est de 3</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="libelle">Libelle</label>
+    <input type="text" name="libelle" id="libelle" class="form-control"
+           #nd="ngModel" required minlength="3" [(ngModel)]="produit.libelle"
+    >
+    <div class="alert alert-danger" *ngIf="nd.touched&&nd.invalid">
+      <div *ngIf="nd.hasError('required')">le libelle est obligatoire</div>
+      <div *ngIf="nd.hasError('minlength')"> La longueur minimale de libelle est de 3</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="prix">Prix</label>
+    <input type="number" name="prix" id="prix" class="form-control"
+           #nprice="ngModel" required  [(ngModel)]="produit.prixUnitaire"
+    >
+    <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
+      <div *ngIf="nprice.hasError('required')">le prix est obligatoire</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="picture">Picture</label>
+    <input type="text" name="picture" id="picture" class="form-control"
+           #np="ngModel" required minlength="5" [(ngModel)]="produit.picture"
+    >
+    <div class="alert alert-danger" *ngIf="np.touched&&np.invalid">
+      <div *ngIf="np.hasError('required')">l'URL de picture est obligatoire</div>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-outline-success" (click)="save()"
+          [disabled]="f.invalid">
+    save
+  </button>
+  &nbsp;
+  <button class="btn btn-outline-warning" (click)="f.reset()">reset</button>
+</form>
+

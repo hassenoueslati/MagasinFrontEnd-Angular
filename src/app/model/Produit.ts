@@ -3,6 +3,7 @@ export class Produit {
   code : string ;
   libelle : string ;
   prixUnitaire: number ;
+  picture : string ;
 
 
 
