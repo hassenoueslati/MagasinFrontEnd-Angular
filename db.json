@@ -1,0 +1,30 @@
+
+{
+  "user":
+[
+  {
+    "idUser": 1,
+    "nom": "shayma",
+    "prenom": "rebhi",
+    "image": null,
+    "email": "shayma.rebhi@gmail.com",
+    "password": "test",
+    "dateNaissance": "2015-03-23",
+    "profession": "Etudiant",
+    "categorieClient": "Premuim",
+    "role": "admin"
+  },
+  {
+    "idUser": 3,
+    "nom": "test3",
+    "prenom": "rebhi",
+    "image": null,
+    "email": "shayma@gmail.com",
+    "password": "test",
+    "dateNaissance": "2015-03-23",
+    "profession": "Etudiant",
+    "categorieClient": "Ordinaire",
+    "role": "user"
+  }
+]
+}
