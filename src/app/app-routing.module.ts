@@ -11,6 +11,8 @@ import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 import {MainUserComponent} from "./User/main-user/main-user.component";
 import {LoginComponent} from "./User/login/login.component";
+import {ProduitMainComponent} from "./produit-main/produit-main.component";
+import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
 
 
 const routes: Routes = [
@@ -18,11 +20,11 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'user', component: MainUserComponent},
-  {path: 'produit', component: ProduitComponent},
+  {path: 'produit', component: ProduitMainComponent},
   {path: 'stock', component: StockComponent},
   {path: 'reclamation', component: ReclamationComponent},
   {path: 'rayon', component: RayonComponent},
-  {path: 'fournisseur', component: FournisseurComponent},
+  {path: 'fournisseur', component: FournisseurMainComponent},
   {path: 'detailProduit', component: DetailProduitComponent},
   {path: 'detailFacture', component: DetailFactureComponent},
 ];

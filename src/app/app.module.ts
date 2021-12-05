@@ -24,6 +24,10 @@ import { MainUserComponent } from './User/main-user/main-user.component';
 import { ListUserComponent } from './User/list-user/list-user.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './User/login/login.component';
+import {ProduitMainComponent} from "./produit-main/produit-main.component";
+import {ProduitFormAddComponent} from "./produit-form-add/produit-form-add.component";
+import {FournisseurFormAddComponent} from "./fournisseur-form-add/fournisseur-form-add.component";
+import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
 const appRoutes: Routes = [
   {path:'', component: LoginComponent}
 
@@ -50,7 +54,11 @@ const appRoutes: Routes = [
     DetailFactureComponent,
     MainUserComponent,
     ListUserComponent,
-    LoginComponent
+    LoginComponent,
+    ProduitMainComponent,
+    ProduitFormAddComponent,
+    FournisseurFormAddComponent,
+    FournisseurMainComponent
   ],
   imports: [
     BrowserModule,
