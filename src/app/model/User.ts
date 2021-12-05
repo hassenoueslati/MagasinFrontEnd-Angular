@@ -1,3 +1,5 @@
+import {Role} from "./Role";
+
 export class User {
    idUser : number ;
    nom : string;
@@ -7,5 +9,6 @@ export class User {
    dateNaissance : Date;
    profession : Profession;
    categorieClient : CategorieClient;
+   roles : Role[];
 
 }

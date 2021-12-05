@@ -10,9 +10,11 @@ import { RayonComponent } from './rayon/rayon.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 import {MainUserComponent} from "./User/main-user/main-user.component";
+import {LoginComponent} from "./User/login/login.component";
 
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'user', component: MainUserComponent},

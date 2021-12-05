@@ -21,7 +21,7 @@
       <td>{{user.categorieClient}}</td>
       <td>{{user.dateNaissance}}</td>
       <td>
-        <button type="button" class="btn btn-outline-danger" (click)="deleteNotif()">Delete </button>
+        <button *ngIf="authService.isAdmin()" type="button" class="btn btn-outline-danger" (click)="deleteNotif()">Delete </button>
       </td>
     </tr>
     <tbody>

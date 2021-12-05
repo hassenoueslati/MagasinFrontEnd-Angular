@@ -23,8 +23,9 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
 import { MainUserComponent } from './User/main-user/main-user.component';
 import { ListUserComponent } from './User/list-user/list-user.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './User/login/login.component';
 const appRoutes: Routes = [
-  {path:'', component: HomeComponent}
+  {path:'', component: LoginComponent}
 
 
 
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     DetailProduitComponent,
     DetailFactureComponent,
     MainUserComponent,
-    ListUserComponent
+    ListUserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

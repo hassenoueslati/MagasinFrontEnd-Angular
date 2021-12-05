@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { User } from 'src/app/model/User';
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-list-user',
@@ -10,7 +11,7 @@ export class ListUserComponent implements OnInit {
   @Input() user: User;
   @Output() deleteEvent = new EventEmitter<User>()
 
-  constructor() { }
+  constructor(public authService : AuthService) { }
 
   ngOnInit(): void {
   }

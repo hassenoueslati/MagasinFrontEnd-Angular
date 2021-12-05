@@ -9,6 +9,7 @@ import {UserService} from "../services/user.service";
 })
 export class MainUserComponent implements OnInit {
   listUser : User[]
+  //category = CategorieClient.Premuim
 
   constructor(private UserService : UserService) { }
 
@@ -25,4 +26,16 @@ export class MainUserComponent implements OnInit {
       ()=>this.listUser.splice(i,1)
     )
   }
+  //getByCategory(): void {
+
+    //this.UserService.findByCategory(this.category)
+      //.subscribe(
+        //data => {
+          //this.listUser = data;
+          //console.log(data);
+        //},
+        //error => {
+          //console.log(error);
+        //});
+  //}
 }
