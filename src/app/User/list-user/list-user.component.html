@@ -1,0 +1,28 @@
+<br><br>
+  <br>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>first name</th>
+      <th>last name</th>
+      <th>profession</th>
+      <th>email</th>
+      <th>account Category</th>
+      <th>birth date</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{user.nom}}</td>
+      <td>{{user.prenom}}</td>
+      <td>{{user.profession}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.categorieClient}}</td>
+      <td>{{user.dateNaissance}}</td>
+      <td>
+        <button *ngIf="authService.isAdmin()" type="button" class="btn btn-outline-danger" (click)="deleteNotif()">Delete </button>
+      </td>
+    </tr>
+    <tbody>
+  </table>

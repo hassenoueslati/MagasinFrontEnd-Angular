@@ -1,52 +1,84 @@
 
+<!-- css -->
+ <!-- loader-->
  <link href="/../assets/assets/css/pace.min.css" rel="stylesheet"/>
  <script src="/../assets/assets/js/pace.min.js"></script>
+ <!--favicon-->
  <link rel="icon" href="/../assets/assets/images/favicon.ico" type="image/x-icon">
- <link href="/../assets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+ <!-- Vector CSS -->
+ <!-- simplebar CSS-->
  <link href="/../assets/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+ <!-- Bootstrap core CSS-->
  <link href="/../assets/assets/css/bootstrap.min.css" rel="stylesheet"/>
+ <!-- animate CSS-->
  <link href="/../assets/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+ <!-- Icons CSS-->
  <link href="/../assets/assets/css/icons.css" rel="stylesheet" type="text/css"/>
+ <!-- Sidebar CSS-->
  <link href="/../assets/assets/css/sidebar-menu.css" rel="stylesheet"/>
+ <!-- Custom Style-->
  <link href="/../assets/assets/css/app-style.css" rel="stylesheet"/>
- <script src="/../assets/assets/js/jquery.min.js"></script>
- <script src="/../assets/assets/js/popper.min.js"></script>
- <script src="/../assets/assets/js/bootstrap.min.js"></script>
- <script src="/../assets/assets/plugins/simplebar/js/simplebar.js"></script>
- <script src="/../assets/assets/js/sidebar-menu.js"></script>
- <script src="/../assets/assets/js/jquery.loading-indicator.js"></script>
- <script src="/../assets/assets/js/app-script.js"></script>
- <script src="/../assets/assets/plugins/Chart.js/Chart.min.js"></script>
- <script src="/../assets/assets/js/index.js"></script>
+<!-- end css -->
+
 
 <body class="bg-theme bg-theme1">
 
-     <div id="pageloader-overlay" class="visible incoming">
-       <div class="loader-wrapper-outer">
-         <div class="loader-wrapper-inner" >
-           <div class="loader"></div>
-         </div>
-       </div>
-     </div>
+<!-- start loader -->
+   <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
+   <!-- end loader -->
 
-     <div id="wrapper">
-     <app-sidebar-wrapper></app-sidebar-wrapper>
-     <app-header></app-header>
-      <div class="clearfix"></div>
-       <div class="content-wrapper">
-        <div class="container-fluid">
-          <div class="row mt-3">
-            <div class="col-lg-12">
-              <div class="card">
+<!-- Start wrapper-->
+ <div id="wrapper">
+ <app-sidebar-wrapper></app-sidebar-wrapper>
 
-    <router-outlet></router-outlet>
+<app-header></app-header>
+<div class="clearfix"></div>
 
-              </div>
-            </div>
-            <div class="overlay toggle-menu"></div>
-          </div>
-        </div>
-       </div>
-     <app-footer></app-footer>
-     </div>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+
+   <div class="row mt-3">
+    <div class="col-lg-12">
+      <div class="card">
+
+
+<router-outlet></router-outlet>
+
+
+  </div>
+  </div><!--End Row-->
+
+  <!--start overlay-->
+		  <div class="overlay toggle-menu"></div>
+		<!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+
+    </div><!--End content-wrapper-->
+    </div>
+ <app-footer>
+
+ </app-footer>
+	</div>
 </body>
+<!-- js -->
+<script src="/../assets/assets/js/jquery.min.js"></script>
+<script src="/../assets/assets/js/popper.min.js"></script>
+<script src="/../assets/assets/js/bootstrap.min.js"></script>
+
+<!-- simplebar js -->
+<script src="/../assets/assets/plugins/simplebar/js/simplebar.js"></script>
+<!-- sidebar-menu js -->
+<script src="/../assets/assets/js/sidebar-menu.js"></script>
+<!-- loader scripts -->
+<script src="/../assets/assets/js/jquery.loading-indicator.js"></script>
+<!-- Custom scripts -->
+<script src="/../assets/assets/js/app-script.js"></script>
+<!-- Chart js -->
+
+<script src="/../assets/assets/plugins/Chart.js/Chart.min.js"></script>
+
+<!-- Index js -->
+<script src="/../assets/assets/js/index.js"></script>
+<!-- end js -->
