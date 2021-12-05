@@ -1,0 +1,31 @@
+<form class="w-50 mx-auto" #a="ngForm">
+  <div class="form-group">
+    <label for="Code">Code </label>
+    <input type="text" name="Code" id="Code" class="form-control"
+           #nt="ngModel" required minlength="3" [(ngModel)]="fournisseur.code">
+    <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+      <div *ngIf="nt.hasError('required')"> le Code est obligatoire</div>
+      <div *ngIf="nt.hasError('minlength')">La longueur minimale est de 3</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="libelle">Libelle</label>
+    <input type="text" name="libelle" id="libelle" class="form-control"
+           #nd="ngModel" required minlength="3" [(ngModel)]="fournisseur.libelle"
+    >
+    <div class="alert alert-danger" *ngIf="nd.touched&&nd.invalid">
+      <div *ngIf="nd.hasError('required')">le libelle est obligatoire</div>
+      <div *ngIf="nd.hasError('minlength')"> La longueur minimale de libelle est de 3</div>
+    </div>
+  </div>
+
+  <br>
+  <button class="btn btn-outline-success" (click)="save()"
+          [disabled]="a.invalid">
+    save
+  </button>
+  &nbsp;
+  <button class="btn btn-outline-warning" (click)="a.reset()">reset</button>
+</form>
+

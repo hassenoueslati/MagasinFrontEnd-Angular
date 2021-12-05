@@ -1,6 +1,8 @@
 <br>
 <div class="card" style="width: 18rem;">
   <img src="{{produit.picture}}" class="card-img-top" alt="...">
+  <a routerLink="/detailProduit" class="thumbnail product-thumbnail first-img" id="detailProduit">
+  </a>
   <div class="card-body">
     <h5 class="card-title">{{produit.libelle}}
       <div id="action">
@@ -14,12 +16,15 @@
     <br>
     <p class="card-text">Prix : {{produit.prixUnitaire}} DT</p>
     &nbsp;
-    <button class="btn btn-warning" style="float: right"
-            >
-      <!-- [disabled]="produit.quantity==0" -->
-      Buy Product
+    <button class="btn btn-info" style="float: left" routerLink="/detailProduit">
+      <img src="../../assets/assets/images/detail.png">
+      Show Detail
     </button>
-
+    <button class="btn btn-warning" style="float: right" >
+      <!-- [disabled]="produit.quantity==0" -->
+      <img src="../../assets/assets/images/buy.png">
+      Buy
+    </button>
 
   </div>
 </div>

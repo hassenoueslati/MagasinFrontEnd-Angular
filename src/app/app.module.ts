@@ -24,6 +24,8 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
 import { ProduitMainComponent } from './produit-main/produit-main.component';
 import { ProduitFormAddComponent } from './produit-form-add/produit-form-add.component';
 import {HttpClientModule} from "@angular/common/http";
+import { FournisseurMainComponent } from './fournisseur-main/fournisseur-main.component';
+import { FournisseurFormAddComponent } from './fournisseur-form-add/fournisseur-form-add.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {HttpClientModule} from "@angular/common/http";
     DetailProduitComponent,
     DetailFactureComponent,
     ProduitMainComponent,
-    ProduitFormAddComponent
+    ProduitFormAddComponent,
+    FournisseurMainComponent,
+    FournisseurFormAddComponent
   ],
   imports: [
     BrowserModule,
