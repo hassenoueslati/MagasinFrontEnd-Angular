@@ -17,6 +17,9 @@ export class UserService {
   delete(idUser: any): Observable<any> {
     return this.http.delete(`${baseUrl}/removeUser/${idUser}`);
   }
+  register(user:User) {
+    return this.http.post(`${baseUrl}/addUser`,user);
+  }
   findByCategory(categorieClient: CategorieClient): Observable<User[]> {
     return this.http.get<User[]>(`${baseUrl}/retrieveUserByCategory/${categorieClient}`);
   }

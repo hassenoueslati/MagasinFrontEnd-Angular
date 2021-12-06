@@ -13,6 +13,7 @@ import {MainUserComponent} from "./User/main-user/main-user.component";
 import {LoginComponent} from "./User/login/login.component";
 import {ProduitMainComponent} from "./produit-main/produit-main.component";
 import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
+import {RegisterUserComponent} from "./User/register/register-user.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'fournisseur', component: FournisseurMainComponent},
   {path: 'detailProduit', component: DetailProduitComponent},
   {path: 'detailFacture', component: DetailFactureComponent},
+  {path: 'register',component: RegisterUserComponent }
 ];
 
 @NgModule({

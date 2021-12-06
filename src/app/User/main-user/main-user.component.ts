@@ -26,6 +26,12 @@ export class MainUserComponent implements OnInit {
       ()=>this.listUser.splice(i,1)
     )
   }
+
+  save (user:User):void{
+    this.UserService.register(user).subscribe(
+      ()=>this.listUser.push(user)
+    )
+  }
   //getByCategory(): void {
 
     //this.UserService.findByCategory(this.category)

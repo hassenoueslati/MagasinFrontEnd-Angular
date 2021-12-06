@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,8 +29,17 @@ import {ProduitMainComponent} from "./produit-main/produit-main.component";
 import {ProduitFormAddComponent} from "./produit-form-add/produit-form-add.component";
 import {FournisseurFormAddComponent} from "./fournisseur-form-add/fournisseur-form-add.component";
 import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterUserComponent } from './User/register/register-user.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from "@angular/material/input";
+import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+
 const appRoutes: Routes = [
-  {path:'', component: LoginComponent}
+  {path:'', component: HomeComponent}
 
 
 
@@ -58,16 +68,26 @@ const appRoutes: Routes = [
     ProduitMainComponent,
     ProduitFormAddComponent,
     FournisseurFormAddComponent,
-    FournisseurMainComponent
+    FournisseurMainComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgbDatepickerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[LoginComponent]
 })
 export class AppModule { }
