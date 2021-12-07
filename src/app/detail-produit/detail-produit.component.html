@@ -1,2 +1,22 @@
+<h1 style="text-align: center">Détail Produit</h1>
+<button type="button" class="btn btn-light" routerLink="/produit">
+  return to list Produit
+</button>
+<br>
+<div class="container">
+  <dl class="row">
+    <dt class="col-sm-3">Picture</dt>
+    <dd class="col-sm-9">{{produit.picture}}</dd>
 
-<title>Détail Produit</title>
+    <dt class="col-sm-3">Code </dt>
+    <dd class="col-sm-9">{{produit.code}}</dd>
+
+    <dt class="col-sm-3">Libelle</dt>
+    <dd class="col-sm-9">{{produit.libelle}}</dd>
+
+    <dt class="col-sm-3">Prix </dt>
+    <dd class="col-sm-9">{{produit.prixUnitaire}}</dd>
+
+  </dl>
+
+</div>

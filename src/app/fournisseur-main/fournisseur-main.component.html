@@ -1,0 +1,36 @@
+<br>
+&nbsp;
+<button class="btn btn-outline-primary" (click)="showForm()">{{buttonValue}}</button>
+<div *ngIf="showFormTemplate">
+  <h2 style="text-align: center">Form Produit</h2>
+  <app-fournisseur-form-add (addEvent)="save($event)" [fournisseur]="inputFournisseur" ></app-fournisseur-form-add>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="card-body">
+    <div class="container-fluid">
+          <div class="table-responsive">
+            <table class="table table-bordered" *ngIf="!showFormTemplate">
+              <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Libelle</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <app-fournisseur *ngFor="let currentFournisseur of listFournisseur"
+                               [fournisseur]="currentFournisseur"
+                               (deleteNotifEvent)="delete($event)"
+                               (updateNotifEvent)="update($event)"
+                                ></app-fournisseur>
+              </tbody>
+            </table>
+          </div>
+    </div>
+
+  </div>
+</div>
+
+

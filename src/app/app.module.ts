@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,15 +15,29 @@ import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.compo
 import { FactureComponent } from './facture/facture.component';
 
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { UserComponent } from './user/user.component';
 import { ProduitComponent } from './produit/produit.component';
 import { StockComponent } from './stock/stock.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { RayonComponent } from './rayon/rayon.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
-import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MainUserComponent } from './User/main-user/main-user.component';
+import { ListUserComponent } from './User/list-user/list-user.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './User/login/login.component';
+import {ProduitMainComponent} from "./produit-main/produit-main.component";
+import {ProduitFormAddComponent} from "./produit-form-add/produit-form-add.component";
+import {FournisseurFormAddComponent} from "./fournisseur-form-add/fournisseur-form-add.component";
+import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterUserComponent } from './User/register/register-user.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from "@angular/material/input";
+import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+
 const appRoutes: Routes = [
   {path:'', component: HomeComponent}
 
@@ -37,27 +52,42 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     WapperComponent,
-   
+
     SidebarWrapperComponent,
     FactureComponent,
-    UserComponent,
     ProduitComponent,
     StockComponent,
     ReclamationComponent,
     RayonComponent,
     FournisseurComponent,
     DetailProduitComponent,
-    DetailFactureComponent
+    DetailFactureComponent,
+    MainUserComponent,
+    ListUserComponent,
+    LoginComponent,
+    ProduitMainComponent,
+    ProduitFormAddComponent,
+    FournisseurFormAddComponent,
+    FournisseurMainComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgbDatepickerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[LoginComponent]
 })
 export class AppModule { }
