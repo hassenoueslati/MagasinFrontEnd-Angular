@@ -31,6 +31,7 @@
     </div>
   </div>
 </div>
+
   <div class="row">
     <app-list-user *ngFor="let object of listUser" [user]="object"
                    (deleteEvent)="delete($event)"></app-list-user>
