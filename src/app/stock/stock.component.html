@@ -1,2 +1,57 @@
 
-<title>Stock</title>
+<br>
+<button *ngIf="!showFormTemplate" class="btn btn-outline-info mb-3" (click)="showForm()">Add Stocks</button>
+<button *ngIf="showFormTemplate" class="btn btn-outline-info mb-3" (click)="showForm()">Back To Stocks</button>
+<div class="row" *ngIf="!showFormTemplate">
+    <div class="col-sm-4" *ngFor="let t of tab">
+        <div class="card" style="width: 18rem;" >
+            <div class="card-body">
+                
+                    <p><b class="mr-3">Libelle: </b>{{t.libelleStock}} </p>
+                    <p><b class="mr-3">Quantity : </b>{{t.qte}}</p>
+                    <p><b class="mr-3">Quantity Min: </b>{{t.qteMin}}</p>
+                    <div class="list-group text-center">
+                      <a  class="list-group-item list-group-item-action active">
+                        List of products
+                      </a>
+                      <a *ngFor="let tt of t.produit" class="list-group-item list-group-item-action">Product libelle: {{tt.libelle}}</a>
+                     
+                    </div>
+              
+              <div class="row mt-3">
+                  <div class="col-sm-6">
+                          <button class="btn btn-outline-warning">Update</button>
+                  </div>
+                  <div class="col-sm-6">
+                      <button class="btn btn-outline-danger" (click)="deleteStockById(t.idStock)">Delete</button>
+                  </div>
+              </div>
+          
+          
+          
+            </div>
+          </div>
+          
+    </div>
+</div>
+<form [formGroup]="myForm" (ngSubmit)="addStock()">
+<div class="row d-flex justify-content-center" *ngIf="showFormTemplate">
+    
+        <div class="col-sm-1">Libelle Stock</div>
+        <div class="col-sm-2">
+            <input type="text" formControlName="libelleStock" class="form-control" ([ngModel])="stock.libelleStock">
+        </div>
+        <div class="col-sm-1">Quantité Stock</div>
+        <div class="col-sm-2">
+            <input type="number" formControlName="qte" ([ngModel])="stock.qte" class="form-control">
+        </div>
+        <div class="col-sm-1">Quantité min Stock</div>
+        <div class="col-sm-2">
+            <input type="text" formControlName="qteMin" ([ngModel])="stock.qteMin" class="form-control">
+        </div>
+        <div class="mt-3">
+        <button type="submit" class="btn btn-outline-info">Add Stock</button>
+        </div>
+    
+</div>
+</form>
