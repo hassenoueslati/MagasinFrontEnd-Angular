@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Produit} from "../model/Produit";
 import {ProduitService} from "../services/produit.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-produit-main',
@@ -13,7 +14,7 @@ export class ProduitMainComponent implements OnInit {
   buttonValue: string;
   inputProduit: Produit ;
   msg: string;
-  constructor(private produitService: ProduitService) { }
+  constructor(private produitService: ProduitService, private router:Router) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
@@ -66,5 +67,13 @@ export class ProduitMainComponent implements OnInit {
     this.showFormTemplate = true;
 
   }
+  showdetail(produit:Produit): void{
+    let i = this.listProduit.indexOf(produit);
+    this.router.navigate(['/detailProduit']);
+    this.produitService.getProduitService(produit.idProduit).subscribe(
+      ()=>{this.listProduit[i]= produit;}
+
+    )
+     }
 
 }

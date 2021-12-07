@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
 import {Produit} from "../model/Produit";
+import {ProduitService} from "../services/produit.service";
 
 @Component({
   selector: 'app-produit',
@@ -8,9 +9,10 @@ import {Produit} from "../model/Produit";
 })
 export class ProduitComponent implements OnInit {
   @Input()produit : Produit;
-  @Output() notification = new EventEmitter<Produit>();
+  @Input()ListProduct: Produit[];
   @Output() deleteNotifEvent = new EventEmitter<Produit>();
   @Output() updateNotifEvent = new EventEmitter<Produit>();
+  @Output() showdetailNotifEvent = new EventEmitter<Produit>();
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +22,9 @@ export class ProduitComponent implements OnInit {
   }
   updateNotif(){
     this.updateNotifEvent.emit(this.produit)
+  }
+  showdetailNotif(){
+    this.showdetailNotifEvent.emit(this.produit)
   }
 
 }

@@ -13,11 +13,14 @@ export class ProduitService {
   getListProduitService(): Observable<Produit[]>{
     return this.http.get<Produit[]>(`${baseUrl}/retrieve-all-produits`);
   }
+  getProduitService(idproduit:number){
+    return this.http.get(`${baseUrl}/retrieve-produit/${idproduit}`)
+  }
   addProduitService(produit:Produit){
     return this.http.post(`${baseUrl}/add-produit`, produit);
   }
   deleteProduitService(idproduit:number){
-    return this.http.delete(`${baseUrl}/remove-produit/${idproduit}`)
+    return this.http.delete(`${baseUrl}/remove-produit/${idproduit}`);
   }
   updateProduitService(produit: Produit){
     return this.http.put(`${baseUrl}/modify-produit`, produit);
