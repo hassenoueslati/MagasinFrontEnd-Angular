@@ -1,9 +1,11 @@
+import { User } from "./User";
+
 export class Facture {
   idFacture : number ;
-  montontRemise : number ;
-  montontFacture : number ;
+  montantRemise : number ;
+  montantFacture : number ;
   dateFacture : Date ;
   active :Boolean ;
-  id_user:number;
+  user : User;
 
 }
