@@ -20,20 +20,20 @@
           <img src="/../assets/assets/images/logo-icon.png" alt="logo icon">
         </div>
         <div class="card-title text-uppercase text-center py-3">Sign Up</div>
-        <form>
+       <form [formGroup]="myForm" (ngSubmit)="addUser()">
           <div class="form-group">
-            <label for="exampleInputName" class="sr-only">Name</label>
+            <label  class="sr-only">Name</label>
             <div class="position-relative has-icon-right">
-              <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Name" [(ngModel)]="user.nom">
+              <input type="text" formControlName="nom" class="form-control input-shadow" placeholder="Enter Your Name" [(ngModel)]="user.nom">
               <div class="form-control-position">
                 <i class="icon-user"></i>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputprenom" class="sr-only">surname</label>
+            <label  class="sr-only">surname</label>
             <div class="position-relative has-icon-right">
-              <input type="text" id="exampleInputprenom" class="form-control input-shadow" placeholder="Enter Your Surname" [(ngModel)]="user.prenom">
+              <input type="text" formControlName="prenom" class="form-control input-shadow" placeholder="Enter Your Surname" [(ngModel)]="user.prenom">
               <div class="form-control-position">
                 <i class="icon-user"></i>
               </div>
@@ -41,73 +41,70 @@
           </div>
 
           <div class="form-group">
-            <label for="exampleInputEmailId" class="sr-only">Email ID</label>
+            <label  class="sr-only">Email ID</label>
             <div class="position-relative has-icon-right">
-              <input type="text" id="exampleInputEmailId" class="form-control input-shadow" placeholder="Enter Your Email ID" [(ngModel)]="user.categorieClient">
+              <input type="text" formControlName="email" class="form-control input-shadow" placeholder="Enter Your Email ID" [(ngModel)]="user.categorieClient">
               <div class="form-control-position">
                 <i class="icon-envelope-open"></i>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword" class="sr-only">Password</label>
+            <label  class="sr-only">Password</label>
             <div class="position-relative has-icon-right">
-              <input type="text" id="exampleInputPassword" class="form-control input-shadow" placeholder="Choose Password" [(ngModel)]="user.password">
+              <input type="password" formControlName="password" class="form-control input-shadow" placeholder="Choose Password" [(ngModel)]="user.password">
               <div class="form-control-position">
                 <i class="icon-lock"></i>
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd"
-                     name="dp"  ngbDatepicker #d="ngbDatepicker" [(ngModel)]="user.dateNaissance">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Select</mat-label>
-            <mat-select [(ngModel)]="user.categorieClient">
-              <mat-option value="one">Fidele</mat-option>
-              <mat-option value="one">Ordinaire</mat-option>
-              <mat-option value="one">Premuim</mat-option>
-            </mat-select>
-          </mat-form-field>
-          </div>
-          <div class="form-group">
-            <div class="icheck-material-white">
-              <input type="checkbox" id="user-checkbox" checked="" />
-              <label for="user-checkbox">I Agree With Terms & Conditions</label>
-            </div>
-          </div>
+         <div class="form-group">
+             <div class="input-group">
+               <input class="form-control" type="date" formControlName="dateNaissance"  [(ngModel)]="user.dateNaissance">
 
-          <button type="button" class="btn btn-light btn-block waves-effect waves-light" >Sign Up</button>
-          <div class="text-center mt-3">Sign Up With</div>
+             </div>
+           </div>
+         <!--<div class="form-group">
+         <mat-form-field appearance="fill">
+           <mat-label>Select</mat-label>
+           <mat-select [(ngModel)]="user.categorieClient">
+             <mat-option value="one">Fidele</mat-option>
+             <mat-option value="one">Ordinaire</mat-option>
+             <mat-option value="one">Premuim</mat-option>
+           </mat-select>
+         </mat-form-field>
+         </div>-->
+           <div class="form-group">
+             <div class="icheck-material-white">
+               <input type="checkbox" id="user-checkbox" checked="" />
+               <label for="user-checkbox">I Agree With Terms & Conditions</label>
+             </div>
+           </div>
 
-          <div class="form-row mt-4">
-            <div class="form-group mb-0 col-6">
-              <button type="button" class="btn btn-light btn-block"><i class="fa fa-facebook-square"></i> Facebook</button>
-            </div>
-            <div class="form-group mb-0 col-6 text-right">
-              <button type="button" class="btn btn-light btn-block"><i class="fa fa-twitter-square"></i> Twitter</button>
-            </div>
-          </div>
+           <button type="submit" class="btn btn-light btn-block waves-effect waves-light" >Sign Up</button>
+           <div class="text-center mt-3">Sign Up With</div>
 
-        </form>
-      </div>
-    </div>
-    <div class="card-footer text-center py-3">
-      <p class="text-warning mb-0">Already have an account? <a href=""> Sign In here</a></p>
-    </div>
-  </div>
+           <div class="form-row mt-4">
+             <div class="form-group mb-0 col-6">
+               <button type="button" class="btn btn-light btn-block"><i class="fa fa-facebook-square"></i> Facebook</button>
+             </div>
+             <div class="form-group mb-0 col-6 text-right">
+               <button type="button" class="btn btn-light btn-block"><i class="fa fa-twitter-square"></i> Twitter</button>
+             </div>
+           </div>
+
+         </form>
+       </div>
+     </div>
+     <div class="card-footer text-center py-3">
+       <p class="text-warning mb-0">Already have an account? <a href=""> Sign In here</a></p>
+     </div>
+   </div>
 
 
 
 
-</div><!--wrapper-->
+ </div><!--wrapper-->
 
 
 </body>
