@@ -13,6 +13,12 @@ export class ProduitService {
   getListProduitService(): Observable<Produit[]>{
     return this.http.get<Produit[]>(`${baseUrl}/retrieve-all-produits`);
   }
+  getListProduitPRIXDESCService(): Observable<Produit[]>{
+    return this.http.get<Produit[]>(`${baseUrl}/retrieveProduitParPrixdesc`);
+  }
+  getListProduitPRIXASCService(): Observable<Produit[]>{
+    return this.http.get<Produit[]>(`${baseUrl}/retrieveProduitParPrixAsc`);
+  }
   getProduitService(idproduit:number){
     return this.http.get(`${baseUrl}/retrieve-produit/${idproduit}`)
   }

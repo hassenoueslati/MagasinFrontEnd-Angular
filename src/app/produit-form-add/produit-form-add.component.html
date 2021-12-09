@@ -33,7 +33,7 @@
   <div class="form-group">
     <label for="picture">Picture</label>
     <input type="text" name="picture" id="picture" class="form-control"
-           #np="ngModel" required minlength="5" [(ngModel)]="produit.picture"
+           #np="ngModel" required  [(ngModel)]="produit.picture"
     >
     <div class="alert alert-danger" *ngIf="np.touched&&np.invalid">
       <div *ngIf="np.hasError('required')">l'URL de picture est obligatoire</div>

@@ -52,7 +52,6 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     WapperComponent,
-
     SidebarWrapperComponent,
     FactureComponent,
     ProduitComponent,

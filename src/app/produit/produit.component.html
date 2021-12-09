@@ -14,7 +14,7 @@
     <br>
     <p class="card-text">Prix : {{produit.prixUnitaire}} DT</p>
     &nbsp;
-    <button class="btn btn-info" style="float: left" (click)="showdetailNotif()" >
+      <button class="btn btn-info" style="float: left" routerLink="/detailProduit/{{produit.idProduit}}"  >
       <img src="../../assets/assets/images/detail.png">
       Show Detail
     </button>

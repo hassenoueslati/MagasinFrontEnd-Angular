@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'reclamation', component: ReclamationComponent},
   {path: 'rayon', component: RayonComponent},
   {path: 'fournisseur', component: FournisseurMainComponent},
-  {path: 'detailProduit', component: DetailProduitComponent},
+  {path: 'detailProduit/:id', component: DetailProduitComponent},
+  {path: 'produit/detailProduit/:id', component: DetailProduitComponent},
   {path: 'detailFacture', component: DetailFactureComponent},
   {path: 'register',component: RegisterUserComponent }
 ];

@@ -10,9 +10,11 @@ import {Router} from "@angular/router";
 })
 export class ProduitMainComponent implements OnInit {
   listProduit: Produit[];
+  produit : Produit;
   showFormTemplate: boolean;
   buttonValue: string;
   inputProduit: Produit ;
+  inputLibelle : String;
   msg: string;
   constructor(private produitService: ProduitService, private router:Router) { }
 
@@ -67,13 +69,15 @@ export class ProduitMainComponent implements OnInit {
     this.showFormTemplate = true;
 
   }
-  showdetail(produit:Produit): void{
-    let i = this.listProduit.indexOf(produit);
-    this.router.navigate(['/detailProduit']);
-    this.produitService.getProduitService(produit.idProduit).subscribe(
-      ()=>{this.listProduit[i]= produit;}
-
+  TreeASC(){
+    this.produitService.getListProduitPRIXASCService().subscribe(
+      (data)=> this.listProduit = data
     )
-     }
+  }
+  TreeDESC(){
+    this.produitService.getListProduitPRIXDESCService().subscribe(
+      (data)=> this.listProduit = data
+    )
+  }
 
 }

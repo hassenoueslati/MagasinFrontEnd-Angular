@@ -18,4 +18,5 @@ export class ProduitFormAddComponent implements OnInit {
     this.addEvent.emit(this.produit);
     this.produit = new Produit();
   }
+
 }
