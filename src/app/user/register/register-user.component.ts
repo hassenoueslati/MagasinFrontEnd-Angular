@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../../model/User";
-import {Role} from "../../model/Role";
 import {UserService} from "../services/user.service";
-import {Produit} from "../../model/Produit";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-user',
@@ -10,18 +10,37 @@ import {Produit} from "../../model/Produit";
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-  listUser : User[]
  user: User
+  myForm:FormGroup;
+ data={
+   "nom": String,
+   "prenom":String,
+   "email":String,
+   "password":String,
+   "dateNaissance":Date
+}
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private router :Router,private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+   this.user=new User();
+   this.myForm=this.formBuilder.group({
+     'nom':[''],
+     'prenom':[''],
+     'email':[''],
+     'password':[''],
+     'dateNaissance':['']
+
+   })
   }
 
-  //save (user:User):void{
-    //this.userService.register(user).subscribe(
-      //()=>this.user.push(user)
-    //)
-    //this.user= new User();
- // }
+ addUser(){
+   console.log(this.myForm.controls["dateNaissance"].value)
+   this.userService.register(this.myForm.value).subscribe((data)=>{
+       alert("user added succefuly")
+     this.router.navigate(['/home'])
+   })
+
+ }
+
 }

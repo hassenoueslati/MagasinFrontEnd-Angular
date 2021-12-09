@@ -37,6 +37,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from "@angular/material/input";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import { DataTablesModule } from 'angular-datatables';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent}
@@ -83,7 +84,12 @@ const appRoutes: Routes = [
     MatOptionModule,
     MatDatepickerModule,
     MatInputModule,
-    NgbDatepickerModule
+    NgbDatepickerModule,
+  
+    
+    DataTablesModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
