@@ -3,6 +3,9 @@ import {User} from "../../model/User";
 import {UserService} from "../services/user.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import { MatDialogRef} from "@angular/material/dialog";
+import {HeaderComponent} from "../../header/header.component";
+
 
 @Component({
   selector: 'app-register-user',
@@ -20,7 +23,7 @@ export class RegisterUserComponent implements OnInit {
    "dateNaissance":Date
 }
 
-  constructor(private userService : UserService, private router :Router,private formBuilder : FormBuilder) { }
+  constructor(private userService : UserService, private router :Router,private formBuilder : FormBuilder, public dialogRef : MatDialogRef<HeaderComponent>) { }
 
   ngOnInit(): void {
    this.user=new User();
@@ -39,8 +42,12 @@ export class RegisterUserComponent implements OnInit {
    this.userService.register(this.myForm.value).subscribe((data)=>{
        alert("user added succefuly")
      this.router.navigate(['/home'])
+     this.onClose();
+
    })
 
  }
-
+  onClose(){
+    this.dialogRef.close();
+  }
 }
