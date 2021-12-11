@@ -3,7 +3,6 @@ import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import {User} from "../../model/User";
 import {MatDialog , MatDialogConfig} from "@angular/material/dialog";
-
 import { MatDialogRef} from "@angular/material/dialog";
 import {HeaderComponent} from "../../header/header.component";
 import {RegisterUserComponent} from "../register/register-user.component";

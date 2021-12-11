@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule , MatDialogRef} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -86,13 +86,14 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatInputModule,
     NgbDatepickerModule,
-  
-    
+
+
+
     DataTablesModule,
-    
-    
+
+
   ],
-  providers: [],
+  providers: [{provide:MatDialogRef , useValue:{} }],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })

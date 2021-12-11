@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     isloggedin = localStorage.getItem('isLogged');
     loggedUser = localStorage.getItem('loggedUser');
     if(isloggedin!="true" || !loggedUser)
-      this.router.navigate(['/login'])
+      this.router.navigate(['/'])
     else
       this.authService.setLoggedUserFromLocalStorage(loggedUser);
   }

@@ -60,6 +60,6 @@ export class AuthService {
     this.roles = undefined;
     localStorage.removeItem('loggedUser');
     localStorage.setItem('isloggedIn', String(this.isLogged));
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
   }
