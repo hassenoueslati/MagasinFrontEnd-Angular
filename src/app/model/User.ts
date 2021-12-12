@@ -10,5 +10,6 @@ export class User {
    profession : Profession;
    categorieClient : CategorieClient;
    roles : Role[];
+   image : string;
 
 }

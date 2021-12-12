@@ -11,11 +11,15 @@ export class ListUserComponent implements OnInit {
   @Input() user: User;
   @Output() deleteEvent = new EventEmitter<User>()
 
-  constructor(public authService : AuthService) { }
+  constructor(public authService: AuthService) {
+  }
 
   ngOnInit(): void {
   }
-  deleteNotif(){
+
+  deleteNotif() {
     this.deleteEvent.emit(this.user)
   }
+
+
 }

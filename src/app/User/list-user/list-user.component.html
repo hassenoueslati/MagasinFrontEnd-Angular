@@ -23,6 +23,9 @@
       <td>
         <button *ngIf="authService.isAdmin()" type="button" class="btn btn-outline-danger" (click)="deleteNotif()">Delete </button>
       </td>
+      <td>
+        <button *ngIf="user.idUser==authService.idUser" type="button" class="btn btn-outline-info">Update</button>
+      </td>
     </tr>
     <tbody>
   </table>

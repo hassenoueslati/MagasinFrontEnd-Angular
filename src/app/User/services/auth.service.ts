@@ -12,6 +12,14 @@ export class AuthService {
   public loggedUser:string | undefined;
   public isLogged : boolean=false;
   public roles : Role[] | undefined;
+  public idUser : any ;
+  public prenom : string
+  public Categ : string
+  public prof : string
+  public birthd : Date
+  public email : string
+  public image : string
+  public pass : string
 
   apiURL : string = "http://localhost:8089/SpringMVC/User/log"
 
@@ -28,8 +36,27 @@ export class AuthService {
     this.loggedUser = user.nom;
     this.isLogged = true;
     this.roles = user.roles;
-    localStorage.setItem('loggedUser', this.loggedUser);
+    this.idUser = user.idUser
+    this.prenom = user.prenom
+    this.prof = user.profession
+    this.Categ = user.categorieClient
+    this.email= user.email
+    this.birthd = user.dateNaissance
+    this.image = user.image
+    this.pass = user.password
+    localStorage.setItem('loggedUser', this.loggedUser)
+    localStorage.setItem('idUser', this.idUser)
+    localStorage.setItem('prenom', this.prenom)
+    localStorage.setItem('profession', this.prof)
+    localStorage.setItem('categorie', this.Categ)
+    localStorage.setItem('email', this.email)
+    localStorage.setItem('image', this.image)
+    localStorage.setItem('pass', this.pass)
+
+    // @ts-ignore
+    localStorage.setItem('birthday', this.birthd)
     localStorage.setItem('isloggedIn', String(this.isLogged))
+
   }
   isAdmin():Boolean {
     let admin: Boolean = false;
@@ -48,6 +75,24 @@ export class AuthService {
       this.roles = user.roles;
     });
   }
+  getUserId(email : string){
+    this.getUserFromDB(email).subscribe((user:User)=>
+    {
+      this.idUser=user.idUser;
+    })
+
+}
+  /*IsUser():Boolean{
+    let user:Boolean= false;
+    if(!this.idUser)
+      return false;
+    this.idUser.forEach((curUser: { idUser: number; }) => {
+    if(curUser == this.idUser){
+      user=true
+    }
+   });
+  return user;
+}*/
   setLoggedUserFromLocalStorage(login : string){
     this.loggedUser=login;
     this.isLogged=true;

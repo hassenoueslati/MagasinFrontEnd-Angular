@@ -38,6 +38,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from "@angular/material/input";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import { DataTablesModule } from 'angular-datatables';
+import { ProfilComponent } from './profil/profil.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent}
@@ -70,7 +71,8 @@ const appRoutes: Routes = [
     ProduitFormAddComponent,
     FournisseurFormAddComponent,
     FournisseurMainComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

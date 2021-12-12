@@ -27,8 +27,8 @@
 
 
      </ul>
-      <a class="nav-link">{{authService.loggedUser}}</a>
-     <a *ngIf="!authService.isLogged" class="icon-login mr-2" (click)="onCreate()" >  Login</a>
+      <a class="nav-link" routerLink="/profil">{{authService.loggedUser}}</a>
+     <a *ngIf="!authService.isLogged" class="icon-login mr-2 " (click)="onCreate()" >  Login</a>
       <a *ngIf="authService.isLogged" class="icon-logout mr-2" (click)="onLogout()">  Logout</a>
 
 
