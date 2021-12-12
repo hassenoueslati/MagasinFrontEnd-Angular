@@ -23,4 +23,7 @@ export class UserService {
   findByCategory(categorieClient: CategorieClient): Observable<User[]> {
     return this.http.get<User[]>(`${baseUrl}/retrieveUserByCategory/${categorieClient}`);
   }
+  update (user : User){
+    return this.http.put(`${baseUrl}/modifyUser`, user)
+  }
 }

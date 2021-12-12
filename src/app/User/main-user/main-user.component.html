@@ -1,3 +1,10 @@
+<div *ngIf="showFormTemplate">
+  <button class="btn btn-outline-primary" (click)="showForm()">Back to List User </button>
+  <h2 style="text-align: center">Form User</h2>
+  <app-user-form-update (addEvent)="save($event)" [user]="inputUser"></app-user-form-update>
+</div>
+
+<div *ngIf="!showFormTemplate">
 <div class="row">
 <div class="col-md-3">
   <div class="card" style="width: 18rem;">
@@ -35,8 +42,10 @@
   <div class="row">
 
     <app-list-user *ngFor="let object of listUser" [user]="object"
-                   (deleteEvent)="delete($event)"></app-list-user>
+                   (deleteEvent)="delete($event)"
+                    (updateEvent)="update($event)"></app-list-user>
   </div>
+</div>
 </div>
 
 

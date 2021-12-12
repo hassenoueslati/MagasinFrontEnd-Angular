@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { User } from 'src/app/model/User';
 import {AuthService} from "../services/auth.service";
+import {Fournisseur} from "../../model/Fournisseur";
 
 @Component({
   selector: 'app-list-user',
@@ -10,6 +11,7 @@ import {AuthService} from "../services/auth.service";
 export class ListUserComponent implements OnInit {
   @Input() user: User;
   @Output() deleteEvent = new EventEmitter<User>()
+  @Output() updateEvent = new EventEmitter<User>();
 
   constructor(public authService: AuthService) {
   }
@@ -19,6 +21,9 @@ export class ListUserComponent implements OnInit {
 
   deleteNotif() {
     this.deleteEvent.emit(this.user)
+  }
+  updateNotif(){
+    this.updateEvent.emit(this.user)
   }
 
 

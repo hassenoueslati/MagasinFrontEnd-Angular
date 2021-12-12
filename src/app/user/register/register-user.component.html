@@ -20,11 +20,17 @@
           <img src="/../assets/assets/images/logo-icon.png" alt="logo icon">
         </div>
         <div class="card-title text-uppercase text-center py-3">Sign Up</div>
-       <form [formGroup]="myForm" (ngSubmit)="addUser()">
+       <form [formGroup]="myForm" (ngSubmit)="addUser()" #a="ngForm">
           <div class="form-group">
             <label  class="sr-only">Name</label>
             <div class="position-relative has-icon-right">
-              <input type="text" formControlName="nom" class="form-control input-shadow" placeholder="Enter Your Name" [(ngModel)]="user.nom">
+              <input  type="text" name="nom" class="form-control input-shadow"
+                      required minlength="3" pattern="[a-zA-Z]+$" #fn="ngModel" placeholder="Enter Your Name"  [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched ">
+                <div *ngIf="fn.hasError('required')">First name is required</div>
+                <div *ngIf="fn.hasError('minlength')">First name minlength is equal to 3 </div>
+                <div *ngIf="fn.hasError('pattern')">error msg pattern </div>
+              </div>
               <div class="form-control-position">
                 <i class="icon-user"></i>
               </div>
@@ -33,7 +39,13 @@
           <div class="form-group">
             <label  class="sr-only">surname</label>
             <div class="position-relative has-icon-right">
-              <input type="text" formControlName="prenom" class="form-control input-shadow" placeholder="Enter Your Surname" [(ngModel)]="user.prenom">
+              <input type="text" name="prenom" required minlength="3" pattern="[a-zA-Z]+$" #fl="ngModel"
+                     class="form-control input-shadow" placeholder="Enter Your Surname" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger" *ngIf="fl.invalid && fl.touched ">
+                <div *ngIf="fl.hasError('required')">Last name is required</div>
+                <div *ngIf="fl.hasError('minlength')">Last name minlength is equal to 3 </div>
+                <div *ngIf="fl.hasError('pattern')">error msg pattern </div>
+              </div>
               <div class="form-control-position">
                 <i class="icon-user"></i>
               </div>
@@ -43,7 +55,12 @@
           <div class="form-group">
             <label  class="sr-only">Email ID</label>
             <div class="position-relative has-icon-right">
-              <input type="text" formControlName="email" class="form-control input-shadow" placeholder="Enter Your Email ID" [(ngModel)]="user.categorieClient">
+              <input type="text" name="email" class="form-control input-shadow" placeholder="Enter Your Email ID"
+                     required email pattern="^[a-zA-Z0-9._-]+@[a-z0-9.-]+.[a-z]{2,4}?" #fe="ngModel" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger" *ngIf="fe.invalid && fe.touched ">
+                <div *ngIf="fe.hasError('required')">email is required</div>
+                <div *ngIf="fe.hasError('pattern')">error msg pattern </div>
+              </div>
               <div class="form-control-position">
                 <i class="icon-envelope-open"></i>
               </div>
@@ -52,7 +69,12 @@
           <div class="form-group">
             <label  class="sr-only">Password</label>
             <div class="position-relative has-icon-right">
-              <input type="password" formControlName="password" class="form-control input-shadow" placeholder="Choose Password" [(ngModel)]="user.password">
+              <input type="password" name="password" required  pattern="^[a-zA-Z0-9]{8,}?" #fp="ngModel"
+                     class="form-control input-shadow" placeholder="Choose Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger" *ngIf="fp.invalid && fp.touched ">
+                <div *ngIf="fp.hasError('required')">password is required</div>
+                <div *ngIf="fp.hasError('pattern')">error msg pattern </div>
+              </div>
               <div class="form-control-position">
                 <i class="icon-lock"></i>
               </div>
@@ -60,20 +82,13 @@
           </div>
          <div class="form-group">
              <div class="input-group">
-               <input class="form-control" type="date" formControlName="dateNaissance"  [(ngModel)]="user.dateNaissance">
-
+               <input class="form-control" type="date" name="dateNaissance"
+                      required #fd="ngModel"  [(ngModel)]="user.dateNaissance" [ngModelOptions]="{standalone: true}">
+               <div class="alert alert-danger" *ngIf="fd.invalid && fd.touched ">
+                 <div *ngIf="fd.hasError('required')">Birth date is required</div>
+               </div>
              </div>
            </div>
-         <!--<div class="form-group">
-         <mat-form-field appearance="fill">
-           <mat-label>Select</mat-label>
-           <mat-select [(ngModel)]="user.categorieClient">
-             <mat-option value="one">Fidele</mat-option>
-             <mat-option value="one">Ordinaire</mat-option>
-             <mat-option value="one">Premuim</mat-option>
-           </mat-select>
-         </mat-form-field>
-         </div>-->
            <div class="form-group">
              <div class="icheck-material-white">
                <input type="checkbox" id="user-checkbox" checked="" />
@@ -81,7 +96,7 @@
              </div>
            </div>
 
-           <button type="submit" class="btn btn-light btn-block waves-effect waves-light" >Sign Up</button>
+           <button type="submit" class="btn btn-light btn-block waves-effect waves-light" [disabled]="a.invalid"  >Sign Up</button>
            <div class="text-center mt-3">Sign Up With</div>
 
            <div class="form-row mt-4">

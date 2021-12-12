@@ -1,8 +1,9 @@
 <br><br>
   <br>
-  <table class="table table-hover">
+  <table class="table table-hover" *ngIf="user.idUser==authService.idUser || authService.isAdmin()" >
     <thead>
     <tr>
+      <th>Picture</th>
       <th>first name</th>
       <th>last name</th>
       <th>profession</th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody>
     <tr>
+      <td><img src="{{user.image}}" style="height: 50px ; width: 50px"> </td>
       <td>{{user.nom}}</td>
       <td>{{user.prenom}}</td>
       <td>{{user.profession}}</td>
@@ -24,7 +26,7 @@
         <button *ngIf="authService.isAdmin()" type="button" class="btn btn-outline-danger" (click)="deleteNotif()">Delete </button>
       </td>
       <td>
-        <button *ngIf="user.idUser==authService.idUser" type="button" class="btn btn-outline-info">Update</button>
+        <button *ngIf="user.idUser==authService.idUser" type="button" class="btn btn-outline-info" (click)="updateNotif()">Update</button>
       </td>
     </tr>
     <tbody>

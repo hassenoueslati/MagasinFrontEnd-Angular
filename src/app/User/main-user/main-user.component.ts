@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../model/User";
 import {UserService} from "../services/user.service";
+import {Fournisseur} from "../../model/Fournisseur";
 
 
 @Component({
@@ -11,8 +12,10 @@ import {UserService} from "../services/user.service";
 
 export class MainUserComponent implements OnInit {
   listUser : User[]
-  roles:CategorieClient.Fidele;
-  //category = CategorieClient.Premuim
+  showFormTemplate: boolean;
+  //roles:CategorieClient.Fidele;
+  inputUser : User
+
 
 
 
@@ -24,14 +27,32 @@ constructor(private UserService : UserService) { }
     )
 
   }
-
+  save(user: User): void {
+    let i = this.listUser.indexOf(user);
+    if (i != -1) {
+      this.UserService.update(user).subscribe(
+        () => {
+          this.listUser[i] = user;
+          this.showFormTemplate = false
+        }
+      )
+    }
+  }
   delete(u : User){
     let i = this.listUser.indexOf(u);
     this.UserService.delete(u.idUser).subscribe(
       ()=>this.listUser.splice(i,1)
     )
   }
-
+  showForm(){
+    if (this.showFormTemplate ===false){
+      this.showFormTemplate = true
+      this.inputUser = new User();
+    }
+    else {
+      this.showFormTemplate = false
+    }
+  }
 
   Show(critere:String){
     enum CategorieClient {
@@ -47,16 +68,9 @@ constructor(private UserService : UserService) { }
     else this.UserService.findByCategory(CategorieClient.Premuim).subscribe((data)=>this.listUser=data);
     console.log(CategorieClient.Fidele);
   }
-  //getByCategory(): void {
+  update (user : User){
+  this.inputUser = user
+    this.showFormTemplate = true
 
-    //this.UserService.findByCategory(this.category)
-      //.subscribe(
-        //data => {
-          //this.listUser = data;
-          //console.log(data);
-        //},
-        //error => {
-          //console.log(error);
-        //});
-  //}
+  }
 }

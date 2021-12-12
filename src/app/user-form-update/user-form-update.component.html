@@ -1,0 +1,84 @@
+<div class="tab-pane" id="edit">
+  <form #a="ngForm">
+    <div class="form-group row">
+      <label for="nom" class="col-lg-3 col-form-label form-control-label">First name</label>
+      <div class="col-lg-9">
+        <input class="form-control" #nt="ngModel" required minlength="3"
+               name="nom" id="nom" type="text" [(ngModel)]="user.nom">
+        <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+          <div *ngIf="nt.hasError('required')"> le nom est obligatoire</div>
+          <div *ngIf="nt.hasError('minlength')">La longueur minimale est de 3</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="prenom" class="col-lg-3 col-form-label form-control-label">Last name</label>
+      <div class="col-lg-9">
+        <input class="form-control" #nd="ngModel" required minlength="3"
+               name="prenom" id="prenom" type="text" [(ngModel)]="user.prenom">
+        <div *ngIf="nd.hasError('required')">le prenom est obligatoire</div>
+        <div *ngIf="nd.hasError('minlength')"> La longueur minimale de prenom est de 3</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-lg-3 col-form-label form-control-label">Email</label>
+      <div class="col-lg-9">
+        <input class="form-control" required email pattern="^[a-zA-Z0-9._-]+@gmail.com" #fe="ngModel"
+               name="email" id="email" type="email" [(ngModel)]="user.email">
+        <div class="alert alert-danger" *ngIf="fe.invalid && fe.touched ">
+        <div *ngIf="fe.hasError('required')">email is required</div>
+        <div *ngIf="fe.hasError('pattern')">error msg pattern </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="image" class="col-lg-3 col-form-label form-control-label">Change profile</label>
+      <div class="col-lg-9">
+        <input class="form-control" name="image" id="image" type="url" [(ngModel)]="user.image">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="categorieClient" class="col-lg-3 col-form-label form-control-label">Category</label>
+      <div class="col-lg-9">
+        <input class="form-control" name="categorieClient" id="categorieClient" type="text" [(ngModel)]="user.categorieClient">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="profession" class="col-lg-3 col-form-label form-control-label">Profession</label>
+      <div class="col-lg-9">
+        <input class="form-control" name="profession" id="profession" type="text" [(ngModel)]="user.profession">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="dateNaissance" class="col-lg-3 col-form-label form-control-label">Birthday</label>
+      <div class="col-lg-9">
+        <input class="form-control" name="dateNaissance" id="dateNaissance" type="date" [(ngModel)]="user.dateNaissance" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="password" class="col-lg-3 col-form-label form-control-label">Password</label>
+      <div class="col-lg-9">
+        <input class="form-control" required  pattern="^[a-zA-Z0-9]{8,}?" #fp="ngModel"
+               name="password" id="password" type="password" [(ngModel)]="user.password">
+        <div class="alert alert-danger" *ngIf="fp.invalid && fp.touched ">
+          <div *ngIf="fp.hasError('required')">password is required</div>
+          <div *ngIf="fp.hasError('pattern')">error msg pattern </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label"></label>
+      <div class="col-lg-9">
+        <input type="reset" class="btn btn-secondary" value="Reset" (click)="a.reset()">
+        <input type="button" class="btn btn-primary" value="Save Changes" (click)="save()" >
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+

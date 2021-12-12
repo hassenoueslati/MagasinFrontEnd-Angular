@@ -39,6 +39,7 @@ import {MatInputModule} from "@angular/material/input";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import { DataTablesModule } from 'angular-datatables';
 import { ProfilComponent } from './profil/profil.component';
+import { UserFormUpdateComponent } from './user-form-update/user-form-update.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent}
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
     FournisseurFormAddComponent,
     FournisseurMainComponent,
     RegisterUserComponent,
-    ProfilComponent
+    ProfilComponent,
+    UserFormUpdateComponent
   ],
   imports: [
     BrowserModule,
