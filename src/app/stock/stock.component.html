@@ -1,8 +1,9 @@
-
+<input type="text" placeholder="Search by liebelle" [(ngModel)]="search" (ngModelChange)="searchFn($event)" class="form-control">
 <br>
-<button *ngIf="!showFormTemplate" class="btn btn-outline-info mb-3" (click)="showForm()">Add Stocks</button>
-<button *ngIf="showFormTemplate" class="btn btn-outline-info mb-3" (click)="showForm()">Back To Stocks</button>
-<div class="row" *ngIf="!showFormTemplate">
+<button *ngIf="!showFormTemplate && !showFormUpdate" class="btn btn-outline-info mb-3" (click)="showForm()">Add Stocks</button>
+<button *ngIf="showFormTemplate && !showFormUpdate" class="btn btn-outline-info mb-3" (click)="showForm()">Back To Stocks</button>
+<button *ngIf="showFormUpdate" class="btn btn-outline-info mb-3" (click)="showFormUpdatess()">Back To Stocks</button>
+<div class="row" *ngIf="!showFormTemplate && !showFormUpdate">
     <div class="col-sm-4" *ngFor="let t of tab">
         <div class="card" style="width: 18rem;" >
             <div class="card-body">
@@ -20,7 +21,7 @@
               
               <div class="row mt-3">
                   <div class="col-sm-6">
-                          <button class="btn btn-outline-warning">Update</button>
+                          <button class="btn btn-outline-warning" (click)="showFormUpdates(t.idStock)">Update</button>
                   </div>
                   <div class="col-sm-6">
                       <button class="btn btn-outline-danger" (click)="deleteStockById(t.idStock)">Delete</button>
@@ -34,20 +35,29 @@
           
     </div>
 </div>
-<form [formGroup]="myForm" (ngSubmit)="addStock()">
-<div class="row d-flex justify-content-center" *ngIf="showFormTemplate">
-    
+<form [formGroup]="myForm" (ngSubmit)="addStock()" *ngIf="showFormTemplate && !showFormUpdate">
+<div class="row d-flex justify-content-center" >
+        
         <div class="col-sm-1">Libelle Stock</div>
         <div class="col-sm-2">
             <input type="text" formControlName="libelleStock" class="form-control" ([ngModel])="stock.libelleStock">
+            <div *ngIf="myForm.controls['libelleStock'].hasError('required')" class="alert alert-danger mt-2">
+                <div>Libelle Stock is not valid</div>
+            </div>
         </div>
         <div class="col-sm-1">Quantité Stock</div>
         <div class="col-sm-2">
             <input type="number" formControlName="qte" ([ngModel])="stock.qte" class="form-control">
+            <div *ngIf="myForm.controls['qte'].hasError('required')" class="alert alert-danger mt-2">
+                <div>Quantity  is not valid</div>
+            </div>
         </div>
         <div class="col-sm-1">Quantité min Stock</div>
         <div class="col-sm-2">
             <input type="text" formControlName="qteMin" ([ngModel])="stock.qteMin" class="form-control">
+            <div *ngIf="myForm.controls['qteMin'].hasError('required')" class="alert alert-danger mt-2">
+                <div>Quantity min is not valid</div>
+            </div>
         </div>
         <div class="mt-3">
         <button type="submit" class="btn btn-outline-info">Add Stock</button>
@@ -55,3 +65,44 @@
     
 </div>
 </form>
+
+<form [formGroup]="myFormUpdate" (ngSubmit)="updateStock(stock.idStock)" >
+    <div class="row d-flex justify-content-center" *ngIf="showFormUpdate">
+        
+            {{stock.idStock}}
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="libelleStock">Libelle Stock</label>
+                    <input type="text" formControlName="libelleStock" class="form-control" [(ngModel)]="stock.libelleStock">
+                    <div *ngIf="myFormUpdate.controls['libelleStock'].hasError('required')" class="alert alert-danger mt-2">
+                        <div>Libelle Stock is not valid</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="Quantity">Quantité Stock</label>
+                    <input type="number" formControlName="qte"  [(ngModel)]="stock.qte" class="form-control">
+                    <div *ngIf="myFormUpdate.controls['qte'].hasError('required')" 
+                    class="alert alert-danger mt-2">
+                        <div>Quantity  is not valid</div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label for="Quantity">Quantité min Stock</label>
+                    <input type="text" formControlName="qteMin" [(ngModel)]="stock.qteMin" class="form-control">
+                    <div *ngIf="myFormUpdate.controls['qteMin'].hasError('required')" class="alert alert-danger mt-2">
+                        <div>Quantity min is not valid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+            <button type="submit" class="btn btn-outline-info">update Stock</button>
+            </div>
+        
+    </div>
+    </form>
