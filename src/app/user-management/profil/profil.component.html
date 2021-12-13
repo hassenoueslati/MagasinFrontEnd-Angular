@@ -1,0 +1,141 @@
+<div class="row mt-3">
+  <div class="col-lg-4">
+    <div class="card profile-card-2">
+      <div class="card-img-block">
+      </div>
+      <div class="card-body pt-5">
+        <img src="{{authService.image}}" alt="profile-image" class="profile">
+        <h2 class="card-title">{{authService.loggedUser}}  {{authService.prenom}}</h2>
+        <p class="card-text">This is my profile</p>
+        <div class="icon-block">
+          <a href="javascript:"><i class="fa fa-facebook bg-facebook text-white"></i></a>
+          <a href="javascript:"> <i class="fa fa-twitter bg-twitter text-white"></i></a>
+          <a href="javascript:"> <i class="fa fa-google-plus bg-google-plus text-white"></i></a>
+        </div>
+      </div>
+
+      <div class="card-body border-top border-light">
+        <div class="media align-items-center">
+          <div>
+            <img src="../../../assets/assets/images/timeline/html5.svg" class="skill-img" alt="skill img">
+          </div>
+          <div class="media-body text-left ml-3">
+            <div class="progress-wrapper">
+              <p>HTML5 <span class="float-right">65%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width:65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="media align-items-center">
+          <div><img src="../../../assets/assets/images/timeline/bootstrap-4.svg" class="skill-img" alt="skill img"></div>
+          <div class="media-body text-left ml-3">
+            <div class="progress-wrapper">
+              <p>Bootstrap 4 <span class="float-right">50%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width:50%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="media align-items-center">
+          <div><img src="../../../assets/assets/images/timeline/angular-icon.svg" class="skill-img" alt="skill img"></div>
+          <div class="media-body text-left ml-3">
+            <div class="progress-wrapper">
+              <p>AngularJS <span class="float-right">70%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="media align-items-center">
+          <div><img src="../../../assets/assets/images/timeline/react.svg" class="skill-img" alt="skill img"></div>
+          <div class="media-body text-left ml-3">
+            <div class="progress-wrapper">
+              <p>React JS <span class="float-right">35%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar" style="width:35%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+          <li class="nav-item">
+            <a  data-target="#profile" data-toggle="pill" class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">Profile</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content p-3">
+      <div class="tab-pane active" id="profile">
+        <h1 class="mb-3">Account Information</h1>
+        <div class="row">
+          <div class="col-md-6" id="user">
+            <h3>Category User</h3>
+            <p>
+              {{authService.Categ}}
+            </p>
+            <h3>Profession</h3>
+            <p>
+              {{authService.prof}}
+            </p>
+            <h3>Birthday</h3>
+            <p>
+              {{authService.birthd}}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h6>Recent badges</h6>
+            <a href="javascript:" class="badge badge-dark badge-pill">html5</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">react</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">codeply</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">angularjs</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">css3</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">jquery</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">bootstrap</a>
+            <a href="javascript:" class="badge badge-dark badge-pill">responsive-design</a>
+            <hr>
+            <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
+            <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+            <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+          </div>
+          <div class="col-md-12">
+            <h1 class="mt-2 mb-3"><span class="fa fa-clock-o ion-clock float-right"></span>Security Informations</h1>
+            <div class="table-responsive">
+              <table class="table table-hover table-striped">
+                <tbody>
+                <tr>
+                  <td>
+                    <strong>Email : </strong> {{authService.email}}
+                  </td>
+                </tr>
+                <tr>
+                  <td >
+                    <strong>Password : </strong> ********
+                  </td>
+                </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--/row-->
+      </div>
+    </div>
+  </div>
+</div>
+
+

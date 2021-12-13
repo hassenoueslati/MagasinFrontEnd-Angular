@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../User/services/auth.service";
+import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import {MatDialog , MatDialogConfig} from "@angular/material/dialog";
-import {LoginComponent} from "../User/login/login.component";
+import {LoginComponent} from "../user-management/login/login.component";
 
 @Component({
   selector: 'app-header',

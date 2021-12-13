@@ -1,0 +1,51 @@
+<div *ngIf="showFormTemplate">
+  <button class="btn btn-outline-primary" (click)="showForm()">Back to List User </button>
+  <h2 style="text-align: center">Form User</h2>
+  <app-user-form-update (addEvent)="save($event)" [user]="inputUser"></app-user-form-update>
+</div>
+
+<div *ngIf="!showFormTemplate">
+<div class="row">
+<div class="col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="../../../assets/assets/images/gallery/fidel.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Fidele Account</h5>
+      <p class="card-text">An admin account has privileges to manage services for other people in the App.</p>
+      <a [routerLink]="['./category','Fidele']"  class="btn btn-primary" (click)="Show('Fidele')">show all</a>
+    </div>
+  </div>
+  &nbsp;
+</div>
+<div class="col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="../../../assets/assets/images/gallery/man.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ordinaire Account</h5>
+      <p class="card-text">A Customer Account is a place to manage all billing information about customers</p>
+      <a [routerLink]="['./category','Ordinaire']" class="btn btn-primary" (click)="Show('Ordinaire')">show all</a>
+    </div>
+  </div>
+</div>
+  &nbsp;
+<div class="col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img src="../../../assets/assets/images/gallery/golden.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Premuim Account</h5>
+      <p class="card-text">All Golden members  benefit from the features included with the Cambrian Golden Account </p>
+      <a [routerLink]="['./category','Premuim']" class="btn btn-primary" (click)="Show('Premuim')" >show all</a>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+
+    <app-list-user *ngFor="let object of listUser" [user]="object"
+                   (deleteEvent)="delete($event)"
+                    (updateEvent)="update($event)"></app-list-user>
+  </div>
+</div>
+</div>
+
+

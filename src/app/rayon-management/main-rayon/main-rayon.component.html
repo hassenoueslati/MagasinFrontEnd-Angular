@@ -1,0 +1,17 @@
+<br>
+&nbsp
+<button class="btn btn-outline-success"
+        (click)="showForm()">{{buttonValue}}</button>
+<div *ngIf="showFormTemplate">
+  <h2>Form Rayon</h2>
+  <app-rayon-form-add (addEvent)="save($event)" [rayon]="inputRayon"></app-rayon-form-add>
+</div>
+<div class="row" *ngIf="!showFormTemplate">
+  <app-rayon *ngFor="let currentRayon of listRayon"
+               [rayon]="currentRayon"
+               (deleteNotifEvent)="delete($event)"
+               (updateNotifEvent)="update($event)"
+
+               class="col-md-3">
+  </app-rayon>
+</div>
