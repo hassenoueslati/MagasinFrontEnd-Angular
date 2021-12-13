@@ -15,15 +15,8 @@ import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.compo
 import { FactureComponent } from './facture/facture.component';
 
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { StockComponent } from './stock-management/stock/stock.component';
-import { ReclamationComponent } from './reclamation-management/reclamation/reclamation.component';
-import { RayonComponent } from './rayon-management/rayon/rayon.component';
-import { MainUserComponent } from './user-management/main-user/main-user.component';
-import { ListUserComponent } from './user-management/list-user/list-user.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { LoginComponent } from './user-management/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterUserComponent } from './user-management/register/register-user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
@@ -31,7 +24,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from "@angular/material/input";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import { DataTablesModule } from 'angular-datatables';
-import {UserFormUpdateComponent} from "./user-management/user-form-update/user-form-update.component";
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent}
@@ -49,16 +41,7 @@ const appRoutes: Routes = [
     WapperComponent,
     SidebarWrapperComponent,
     FactureComponent,
-    StockComponent,
-    ReclamationComponent,
-    RayonComponent,
     DetailFactureComponent,
-    MainUserComponent,
-    ListUserComponent,
-    LoginComponent,
-    RegisterUserComponent,
-    UserFormUpdateComponent
-
   ],
   imports: [
     BrowserModule,
@@ -78,6 +61,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[LoginComponent]
+
 })
 export class AppModule { }
