@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Stock } from '../model/Stock';
 import { StocksService } from '../services/stock/stocks.service';

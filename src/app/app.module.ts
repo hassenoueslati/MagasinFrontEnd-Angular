@@ -12,9 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 import { WapperComponent } from './wapper/wapper.component';
 
 import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.component';
-import { FactureComponent } from './facture/facture.component';
 
-import { DetailFactureComponent } from './detail-facture/detail-facture.component';
+
+
 import { ProduitComponent } from './produit/produit.component';
 import { StockComponent } from './stock/stock.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
@@ -39,8 +39,17 @@ import {MatInputModule} from "@angular/material/input";
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import { DataTablesModule } from 'angular-datatables';
 
+
+import { ToastrModule } from 'ngx-toastr';
+
+
+
+
+
+
+
 const appRoutes: Routes = [
-  {path:'', component: HomeComponent}
+
 
 
 
@@ -55,14 +64,14 @@ const appRoutes: Routes = [
     WapperComponent,
 
     SidebarWrapperComponent,
-    FactureComponent,
+  
     ProduitComponent,
     StockComponent,
     ReclamationComponent,
     RayonComponent,
     FournisseurComponent,
     DetailProduitComponent,
-    DetailFactureComponent,
+ 
     MainUserComponent,
     ListUserComponent,
     LoginComponent,
@@ -70,7 +79,15 @@ const appRoutes: Routes = [
     ProduitFormAddComponent,
     FournisseurFormAddComponent,
     FournisseurMainComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+
+  
+    
+ 
+  
+   
+  
+
   ],
   imports: [
     BrowserModule,
@@ -89,7 +106,15 @@ const appRoutes: Routes = [
   
     
     DataTablesModule,
-    
+    ToastrModule.forRoot(
+      {timeOut:10000000,
+        progressBar:true,
+        progressAnimation: 'increasing',
+        preventDuplicates: true
+
+
+      }
+    ),
     
   ],
   providers: [],

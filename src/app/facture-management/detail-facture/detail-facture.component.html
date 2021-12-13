@@ -1,0 +1,75 @@
+
+
+<title> Détail Facture</title>
+
+<div class="card" style="width: 60rem; "  *ngIf="facture">
+    <div class="card-body">
+      <h5 class="card-title">{{facture.user.nom}} {{facture.user.prenom}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{facture.dateFacture | date:'MM/dd/yyyy'}}</h6>
+      <p class="card-text">{{facture.active}}</p>
+      <a href="#" class="card-link">Montant Remise: {{facture.montantRemise}}</a>
+      <a href="#" class="card-link">Montant Facture: {{facture.montantFacture}}</a>
+      <p class="card-text">Details facture :</p>
+      <div >
+          <!-------------------------------------->
+      <table id="datatableexample"  class="table table-striped table-dark">
+        <thead >
+      
+        <tr >
+                 
+               
+                  <th >Quantite</th>
+               
+                  <th >Pirx total</th>
+                  
+                  
+                  <th >Pourcentage remise</th>
+                  <th >Produit</th>
+              </tr>
+          </thead>
+          
+          <tbody>
+      
+           
+                  <tr *ngFor="let detail of facture.detailFacture" >
+                   
+                  <td >{{detail.qte}}</td>
+                  <td >{{detail.prixTotal}}</td>
+                  <td >{{detail.pourcentageRemise}}</td>
+                  <td>
+                    <br>  code  : {{detail.produit.code}} <br>
+                   
+                    <br>    libelle :{{detail.produit.libelle}}<br>
+                   
+                    <br>   prixUnitaire: {{detail.produit.prixUnitaire}}<br>
+                  
+                    <br>   <img src="{{detail.produit.picture}}" class="card-img-top" alt="..."><br>
+
+                    
+                   </td>
+                    
+                  
+                
+            
+      
+      
+      
+              </tr>
+            
+          </tbody>
+      </table>
+     
+
+<!-------------------------------------->
+
+
+
+    </div>
+
+    
+    </div>
+  </div>
+
+
+
+

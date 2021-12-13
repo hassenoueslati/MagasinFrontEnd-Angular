@@ -1,0 +1,76 @@
+
+
+<button type="button" class="btn btn-info" (click)="update()" >Click to update</button>
+<div *ngIf="show">
+    <div class="card-body">
+        <div class="card-title">modifier Facture</div>
+        <hr>
+        
+    
+    <form [formGroup]="updatedForm" (ngSubmit)="handelSubmitUpdate()">
+        <div class="form-group">
+    <label class="label">Montont Remise</label> 
+    <input class="controle" type="number" formControlName="montantRemise" id="montantRemise" min="1"  required placeholder="minimum 1"> 
+    <span class="resultat"></span>
+    </div>
+    <div class="form-group">
+    <label class="label">Montont Facture</label> 
+    <input class="controle" type="number" formControlName="montantFacture"id="montantFacture" min="1"  required placeholder="minimum 1"> 
+    <span class="resultat"></span>
+    </div>
+    
+    <div>
+    <label class="label">Date</label> 
+    <input class="controle" type="date" formControlName="dateFacture"id="dateFacture" required> 
+    <span class="resultat"></span>
+    </div>
+    <div class="form-group py-2">
+    <div class="icheck-material-white">
+    <input type="checkbox" formControlName="active" id="active" checked=""/>
+    <label for="active">Active</label>
+    </div>
+    <span class="resultat"></span>
+    </div>
+    
+    <button  type="submit"class="btn btn-outline-success" >
+    save
+    </button>
+    &nbsp;
+    <button class="btn btn-outline-warning"(click)="goToFactureList()" >reset</button>
+    </form>
+    <style> 
+    input.controle {
+    outline:0;
+    font-size:14px;
+    width:250px;
+    }	
+    label.label {
+    display:inline-block;
+    width:200px;
+    text-align: right;
+    font-style: italic;
+    margin-right:5px;
+    color : black;
+    }
+    input.controle:valid {
+    border:3px solid #0a0;
+    }
+    input.controle:invalid {
+    border:3px solid #a00;
+    }
+    input.controle:valid + span:before  {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    color:#0a0;
+    font-size: 1.5em;
+    }	
+    input.controle:invalid + span:before  {
+    content: "\f00d";
+    font-family: "FontAwesome";
+    color:#a00;
+    font-size: 1.5em;
+    }
+    </style>
+    
+    </div>
+    </div>
