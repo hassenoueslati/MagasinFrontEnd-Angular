@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Reclamation } from '../model/Reclamation';
-import { ReclamationService } from '../services/reclamation.service';
+import { Reclamation } from '../../model/Reclamation';
+import { ReclamationService } from '../../services/reclamation.service';
 
 @Component({
   selector: 'app-reclamation',

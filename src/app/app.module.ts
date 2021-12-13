@@ -16,8 +16,8 @@ import { FactureComponent } from './facture/facture.component';
 
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
 import { ProduitComponent } from './produit/produit.component';
-import { StockComponent } from './stock/stock.component';
-import { ReclamationComponent } from './reclamation/reclamation.component';
+import { StockComponent } from './stock-management/stock/stock.component';
+import { ReclamationComponent } from './reclamation-management/reclamation/reclamation.component';
 import { RayonComponent } from './rayon-management/rayon/rayon.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
@@ -60,8 +60,6 @@ const appRoutes: Routes = [
     SidebarWrapperComponent,
     FactureComponent,
     ProduitComponent,
-    StockComponent,
-    ReclamationComponent,
     FournisseurComponent,
     DetailProduitComponent,
     DetailFactureComponent,

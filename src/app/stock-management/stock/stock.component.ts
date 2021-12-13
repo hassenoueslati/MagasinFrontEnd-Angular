@@ -2,8 +2,8 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Stock } from '../model/Stock';
-import { StocksService } from '../services/stock/stocks.service';
+import { Stock } from '../../model/Stock';
+import { StocksService } from '../../services/stock/stocks.service';
 
 @Component({
   selector: 'app-stock',
