@@ -41,6 +41,7 @@ import {AppComponent} from "../app.component";
     ReactiveFormsModule,
     HttpClientModule,
 
-  ]
+  ],
+  entryComponents:[LoginComponent]
 })
 export class UserManagementModule { }

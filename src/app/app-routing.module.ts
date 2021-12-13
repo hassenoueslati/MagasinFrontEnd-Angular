@@ -3,26 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { FactureComponent } from './facture/facture.component';
 import { HomeComponent } from './home/home.component';
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { StockComponent } from './stock/stock.component';
-import { ReclamationComponent } from './reclamation/reclamation.component';
-import { RayonComponent } from './rayon/rayon.component';
-import {MainUserComponent} from "./User/main-user/main-user.component";
-import {LoginComponent} from "./User/login/login.component";
-import {RegisterUserComponent} from "./User/register/register-user.component";
+
 
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'facture', component: FactureComponent},
-  {path: 'user', component: MainUserComponent},
-  {path: 'stock', component: StockComponent},
-  {path: 'reclamation', component: ReclamationComponent},
-  {path: 'rayon', component: RayonComponent},
   {path: 'detailFacture', component: DetailFactureComponent},
-  {path: 'register',component: RegisterUserComponent },
   { path: 'ProductManagement', loadChildren: () => import('./product-management/product-management.module').then(m => m.ProductManagementModule) },
-  { path: 'FournisseurManagement', loadChildren: () => import('./fournisseur-management/fournisseur-management.module').then(m => m.FournisseurManagementModule) }
+  { path: 'FournisseurManagement', loadChildren: () => import('./fournisseur-management/fournisseur-management.module').then(m => m.FournisseurManagementModule) },
+  { path: 'UserManagement', loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule) },
+  { path: 'RayonManagement', loadChildren: () => import('./rayon-management/rayon-management.module').then(m => m.RayonManagementModule) },
+  { path: 'StockManagement', loadChildren: () => import('./stock-management/stock-management.module').then(m => m.StockManagementModule) },
+  { path: 'ReclamationManagement', loadChildren: () => import('./reclamation-management/reclamation-management.module').then(m => m.ReclamationManagementModule) }
 ];
 
 @NgModule({

@@ -15,15 +15,8 @@ import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.compo
 import { FactureComponent } from './facture/facture.component';
 
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { StockComponent } from './stock/stock.component';
-import { ReclamationComponent } from './reclamation/reclamation.component';
-import { RayonComponent } from './rayon/rayon.component';
-import { MainUserComponent } from './User/main-user/main-user.component';
-import { ListUserComponent } from './User/list-user/list-user.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { LoginComponent } from './User/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterUserComponent } from './User/register/register-user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
@@ -48,14 +41,7 @@ const appRoutes: Routes = [
     WapperComponent,
     SidebarWrapperComponent,
     FactureComponent,
-    StockComponent,
-    ReclamationComponent,
-    RayonComponent,
     DetailFactureComponent,
-    MainUserComponent,
-    ListUserComponent,
-    LoginComponent,
-    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +61,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[LoginComponent]
+
 })
 export class AppModule { }
