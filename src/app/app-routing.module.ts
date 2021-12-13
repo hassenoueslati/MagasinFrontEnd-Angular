@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FactureComponent } from './facture/facture.component';
 import { HomeComponent } from './home/home.component';
-import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-
-
-
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'facture', component: FactureComponent},
-  {path: 'detailFacture', component: DetailFactureComponent},
+  { path: 'FactureManagement', loadChildren: () => import('./facture-management/facture-management.module').then(m => m.FactureManagementModule) },
+  { path: 'DepartementManagement', loadChildren: () => import('./departement-management/departement-management.module').then(m => m.DepartementManagementModule) },
   { path: 'ProductManagement', loadChildren: () => import('./product-management/product-management.module').then(m => m.ProductManagementModule) },
   { path: 'FournisseurManagement', loadChildren: () => import('./fournisseur-management/fournisseur-management.module').then(m => m.FournisseurManagementModule) },
   { path: 'UserManagement', loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule) },

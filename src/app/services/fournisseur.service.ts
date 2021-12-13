@@ -24,4 +24,5 @@ export class FournisseurService {
   updateFournisseurService(fournisseur: Fournisseur){
     return this.http.put(`${baseUrl}/modify-fournisseur`, fournisseur);
   }
+  
 }

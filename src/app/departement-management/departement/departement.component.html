@@ -1,0 +1,42 @@
+<title>departement</title>
+
+
+    
+      <br>
+      <div class="card" style="width: 18rem;">
+       
+ 
+      
+        <div class="card-body">
+          <h5 class="card-title">Nom du departement :
+            {{departement.nomDepartement}}
+            <br>
+            <div class="card text-white bg-primary mb-3" style="max-width: 12rem;"  *ngFor="let rayon of departement.rayon">
+              <div class="card-header">Les rayons de cette departement</div>
+              <div class="card-body">
+                <h5 class="card-title">Code :: {{rayon.code}}</h5>
+                <h5 class="card-title">Libelle :: {{rayon.libelle}}</h5>
+              </div>
+            </div>
+          
+            <div id="action">
+              <button class="btn btn-outline-danger" (click)="deleteNotif()">
+                delete
+              </button>
+              &nbsp;
+              <button class="btn btn-outline-info" (click)="updateNotif()">Update</button>
+            </div>
+          </h5>
+          <br>
+        
+          &nbsp;
+         
+      
+        </div>
+      </div>
+      
+  
+ 
+  
+ 
+ 
