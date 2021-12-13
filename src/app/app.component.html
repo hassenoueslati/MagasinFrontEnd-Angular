@@ -19,49 +19,6 @@
  <!-- Custom Style-->
  <link href="/../assets/assets/css/app-style.css" rel="stylesheet"/>
 <!-- end css -->
-
-
-<body class="bg-theme bg-theme1">
-
-<!-- start loader -->
-   <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
-   <!-- end loader -->
-
-<!-- Start wrapper-->
- <div id="wrapper">
- <app-sidebar-wrapper></app-sidebar-wrapper>
-
-<app-header></app-header>
-<div class="clearfix"></div>
-
-  <div class="content-wrapper">
-    <div class="container-fluid">
-
-   <div class="row mt-3">
-    <div class="col-lg-12">
-      <div class="card">
-
-
-<router-outlet></router-outlet>
-
-
-  </div>
-  </div><!--End Row-->
-
-  <!--start overlay-->
-		  <div class="overlay toggle-menu"></div>
-		<!--end overlay-->
-
-    </div>
-    <!-- End container-fluid-->
-
-    </div><!--End content-wrapper-->
-    </div>
- <app-footer>
-
- </app-footer>
-	</div>
-</body>
 <!-- js -->
 <script src="/../assets/assets/js/jquery.min.js"></script>
 <script src="/../assets/assets/js/popper.min.js"></script>
@@ -82,3 +39,30 @@
 <!-- Index js -->
 <script src="/../assets/assets/js/index.js"></script>
 <!-- end js -->
+
+
+<body class="bg-theme bg-theme1">
+
+    <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
+    
+    <div id="wrapper">
+            <app-sidebar-wrapper></app-sidebar-wrapper>
+
+            <app-header></app-header>
+            <div class="clearfix"></div>
+              <div class="content-wrapper">
+                <div class="container-fluid">
+                    <div class="row mt-3">
+                        <div class="col-lg-12">
+                            <div class="card">
+
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                        <div class="overlay toggle-menu"></div>
+                    </div>
+                </div>
+              </div>
+                      <app-footer></app-footer>
+    </div>
+</body>
