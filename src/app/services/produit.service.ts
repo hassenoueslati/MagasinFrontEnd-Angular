@@ -8,7 +8,13 @@ const baseUrl ='http://localhost:8089/SpringMVC/produit';
   providedIn: 'root'
 })
 export class ProduitService {
+  currentProduit: Produit;
+
+  modProduit(produit:Produit){
+    this.currentProduit=produit;
+  }
   constructor(private http: HttpClient) { }
+
 
   getListProduitService(): Observable<Produit[]>{
     return this.http.get<Produit[]>(`${baseUrl}/retrieve-all-produits`);
@@ -19,8 +25,8 @@ export class ProduitService {
   getListProduitPRIXASCService(): Observable<Produit[]>{
     return this.http.get<Produit[]>(`${baseUrl}/retrieveProduitParPrixAsc`);
   }
-  getProduitService(idproduit:number){
-    return this.http.get(`${baseUrl}/retrieve-produit/${idproduit}`)
+  getProduitService(idProduit:any){
+    return this.http.get<Produit>(`${baseUrl}/retrieve-produit/${idProduit}`)
   }
   addProduitService(produit:Produit){
     return this.http.post(`${baseUrl}/add-produit`, produit);

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Fournisseur} from "../model/Fournisseur";
-import {Produit} from "../model/Produit";
+import {Fournisseur} from "../../model/Fournisseur";
+import {Produit} from "../../model/Produit";
 
 @Component({
   selector: 'app-fournisseur-form-add',

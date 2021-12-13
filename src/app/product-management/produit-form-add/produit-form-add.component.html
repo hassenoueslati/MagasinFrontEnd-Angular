@@ -4,8 +4,8 @@
     <input type="text" name="Code" id="Code" class="form-control"
            #nt="ngModel" required minlength="3" [(ngModel)]="produit.code">
     <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
-      <div *ngIf="nt.hasError('required')"> le Code est obligatoire</div>
-      <div *ngIf="nt.hasError('minlength')">La longueur minimale est de 3</div>
+      <div *ngIf="nt.hasError('required')"> Code is required</div>
+      <div *ngIf="nt.hasError('minlength')">minimum length is 4</div>
     </div>
   </div>
 
@@ -15,8 +15,8 @@
            #nd="ngModel" required minlength="3" [(ngModel)]="produit.libelle"
     >
     <div class="alert alert-danger" *ngIf="nd.touched&&nd.invalid">
-      <div *ngIf="nd.hasError('required')">le libelle est obligatoire</div>
-      <div *ngIf="nd.hasError('minlength')"> La longueur minimale de libelle est de 3</div>
+      <div *ngIf="nd.hasError('required')">libelle is required</div>
+      <div *ngIf="nd.hasError('minlength')"> minimum length is 3</div>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
            #nprice="ngModel" required  [(ngModel)]="produit.prixUnitaire"
     >
     <div class="alert alert-danger" *ngIf="nprice.touched&&nprice.invalid">
-      <div *ngIf="nprice.hasError('required')">le prix est obligatoire</div>
+      <div *ngIf="nprice.hasError('required')">prix is required</div>
     </div>
   </div>
 
@@ -36,16 +36,45 @@
            #np="ngModel" required  [(ngModel)]="produit.picture"
     >
     <div class="alert alert-danger" *ngIf="np.touched&&np.invalid">
-      <div *ngIf="np.hasError('required')">l'URL de picture est obligatoire</div>
+      <div *ngIf="np.hasError('required')">Picture is required</div>
     </div>
   </div>
+
+  <div class="form-group">
+    <label for="dateCreation">date Creation</label>
+    <input type="Date" name="dateCreation" id="dateCreation" class="form-control"
+           #ndc="ngModel" required  [(ngModel)]="produit.dateCreation"
+    >
+    <div class="font-alert text-danger mb-3" *ngIf="ndc.touched&&ndc.invalid">
+      <div *ngIf="ndc.hasError('required')">Date is required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dateDerniereModification">date Derniere Modification</label>
+    <input type="Date" name="dateDerniereModification" id="dateDerniereModification" class="form-control"
+           #ndm="ngModel" required  [(ngModel)]="produit.dateDerniereModification"
+    >
+    <div class="font-alert text-danger mb-3" *ngIf="ndm.touched&&ndm.invalid">
+      <div *ngIf="ndm.hasError('required')">Date is required</div>
+    </div>
+  </div>
+
+   <div class="form-group">
+     <label for="inputGroupSelect02">Categorie Produit</label>
+     <select class="form-select" id="inputGroupSelect02" name="categorieProduit"
+             #ncp="ngModel" required [(ngModel)]="produit.categorieProduit">
+           <option value="Alimentaire">Alimentaire</option>
+           <option value="Quincaillerie">Quincaillerie</option>
+           <option value="Electromenager">Electromenager</option>
+     </select>
+     <div class="font-alert text-danger mb-3" *ngIf="ncp.touched&&ncp.invalid">
+       <div *ngIf="ncp.hasError('required')">Categorie is required</div>
+     </div>
+   </div>
+
   <br>
   <!--
-  <div class="form-group">
-    <label for="detailproduit">Detail produit</label>
-    <input type="text" name="detailproduit" id="detailproduit" class="form-control">
-  </div>
-  <br>
   <div class="form-group">
     <label for="detailfacture">Detail facture</label>
     <input type="text" name="detailfacture" id="detailfacture" class="form-control">

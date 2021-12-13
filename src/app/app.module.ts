@@ -15,20 +15,13 @@ import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.compo
 import { FactureComponent } from './facture/facture.component';
 
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { ProduitComponent } from './produit/produit.component';
 import { StockComponent } from './stock/stock.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { RayonComponent } from './rayon/rayon.component';
-import { FournisseurComponent } from './fournisseur/fournisseur.component';
-import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 import { MainUserComponent } from './User/main-user/main-user.component';
 import { ListUserComponent } from './User/list-user/list-user.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './User/login/login.component';
-import {ProduitMainComponent} from "./produit-main/produit-main.component";
-import {ProduitFormAddComponent} from "./produit-form-add/produit-form-add.component";
-import {FournisseurFormAddComponent} from "./fournisseur-form-add/fournisseur-form-add.component";
-import {FournisseurMainComponent} from "./fournisseur-main/fournisseur-main.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterUserComponent } from './User/register/register-user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -55,20 +48,13 @@ const appRoutes: Routes = [
     WapperComponent,
     SidebarWrapperComponent,
     FactureComponent,
-    ProduitComponent,
     StockComponent,
     ReclamationComponent,
     RayonComponent,
-    FournisseurComponent,
-    DetailProduitComponent,
     DetailFactureComponent,
     MainUserComponent,
     ListUserComponent,
     LoginComponent,
-    ProduitMainComponent,
-    ProduitFormAddComponent,
-    FournisseurFormAddComponent,
-    FournisseurMainComponent,
     RegisterUserComponent
   ],
   imports: [
@@ -85,11 +71,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatInputModule,
     NgbDatepickerModule,
-  
-    
     DataTablesModule,
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

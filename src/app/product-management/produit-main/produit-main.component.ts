@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Produit} from "../model/Produit";
-import {ProduitService} from "../services/produit.service";
+import {Produit} from "../../model/Produit";
+import {ProduitService} from "../../services/produit.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -15,33 +15,38 @@ export class ProduitMainComponent implements OnInit {
   buttonValue: string;
   inputProduit: Produit ;
   inputLibelle : String;
-  msg: string;
-  constructor(private produitService: ProduitService, private router:Router) { }
+  searchProduit : Produit[];
+  constructor(private produitService: ProduitService) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
     this.buttonValue="add new Product";
     this.produitService.getListProduitService().subscribe(
-      (data)=> this.listProduit = data
+      (data)=> this.searchProduit = this.listProduit = data
     )
+  }
+
+  search(query: string){
+  this.searchProduit = (query) ?
+    this.listProduit.filter(produit => produit.libelle.toLowerCase().includes(query.toLowerCase())|| produit.code.toLowerCase().includes(query.toLowerCase()) || produit.categorieProduit.toLowerCase().includes(query.toLowerCase()) ) : this.listProduit ;
   }
 
   save(produit: Produit): void{
     let i = this.listProduit.indexOf(produit);
     if(i!= -1){
-      //update a product
-
       this.produitService.updateProduitService(produit).subscribe(
         ()=>{this.listProduit[i]= produit;
           this.showFormTemplate = false}
       )
+      alert("Product updated successfully");
     }
     else {
-      //add a new product
+      produit.nbLike=0;
       this.showFormTemplate = false
       this.produitService.addProduitService(produit).subscribe(
         ()=>this.listProduit.push(produit)
       )
+      alert("Product added successfully");
     }
   }
   showForm(){
@@ -61,23 +66,26 @@ export class ProduitMainComponent implements OnInit {
     this.produitService.deleteProduitService(produit.idProduit).subscribe(
       ()=>this.listProduit.splice(i,1)
     )
+    alert("Product deleted successfully");
   }
   update(product: Produit): void{
-    //in order to update a product, the parent component will change the input value
-    //and send it to the child component
     this.inputProduit = product;
     this.showFormTemplate = true;
 
   }
   TreeASC(){
     this.produitService.getListProduitPRIXASCService().subscribe(
-      (data)=> this.listProduit = data
+      (data)=> this.searchProduit = data
     )
   }
   TreeDESC(){
     this.produitService.getListProduitPRIXDESCService().subscribe(
-      (data)=> this.listProduit = data
+      (data)=> this.searchProduit = data
     )
+  }
+  like(produit: Produit): void{
+    let i = this.listProduit.indexOf(produit);
+    this.listProduit[i].nbLike++
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Fournisseur} from "../model/Fournisseur";
-import {FournisseurService} from "../services/fournisseur.service";
+import {Fournisseur} from "../../model/Fournisseur";
+import {FournisseurService} from "../../services/fournisseur.service";
 
 @Component({
   selector: 'app-fournisseur-main',
@@ -9,6 +9,8 @@ import {FournisseurService} from "../services/fournisseur.service";
 })
 export class FournisseurMainComponent implements OnInit {
   listFournisseur: Fournisseur[];
+  fournisseur : Fournisseur;
+  searchFournisseur : Fournisseur[];
   showFormTemplate: boolean;
   buttonValue: string;
   inputFournisseur: Fournisseur;
@@ -18,8 +20,12 @@ export class FournisseurMainComponent implements OnInit {
     this.showFormTemplate = false;
     this.buttonValue="add new fournisseur";
     this.fournisseurService.getListFournisseurService().subscribe(
-      (data)=>this.listFournisseur = data
+      (data)=>this.searchFournisseur = this.listFournisseur = data
     )
+  }
+  search(query: string){
+    this.searchFournisseur = (query) ?
+      this.listFournisseur.filter(fournisseur => fournisseur.libelle.toLowerCase().includes(query.toLowerCase())|| fournisseur.code.toLowerCase().includes(query.toLowerCase())) : this.listFournisseur ;
   }
   save(fournisseur: Fournisseur): void {
     let i = this.listFournisseur.indexOf(fournisseur);

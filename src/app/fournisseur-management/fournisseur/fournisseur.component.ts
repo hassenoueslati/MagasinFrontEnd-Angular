@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Fournisseur} from "../model/Fournisseur";
-import {FournisseurService} from "../services/fournisseur.service";
-import {Produit} from "../model/Produit";
+import {Fournisseur} from "../../model/Fournisseur";
+import {FournisseurService} from "../../services/fournisseur.service";
+import {Produit} from "../../model/Produit";
 
 @Component({
   selector: 'app-fournisseur',
@@ -9,7 +9,8 @@ import {Produit} from "../model/Produit";
   styleUrls: ['./fournisseur.component.css']
 })
 export class FournisseurComponent implements OnInit {
-  @Input() fournisseur : Fournisseur;
+  @Input() fournisseur : Fournisseur ;
+  @Input() listfournisseur : Fournisseur[];
   @Output() deleteNotifEvent = new EventEmitter<Fournisseur>();
   @Output() updateNotifEvent = new EventEmitter<Fournisseur>();
 

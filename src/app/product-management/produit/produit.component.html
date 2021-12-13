@@ -1,0 +1,26 @@
+<br>
+<div class="card" style="width: 17rem;">
+  <img src="{{produit.picture}}" class="card-img-top" alt="...">
+
+  <div class="card-body">
+    <h5 class="card-title">{{produit.libelle}}
+      <div id="action">
+        <button class="btn btn-outline-danger" (click)="deleteNotif()">delete</button>
+        &nbsp;
+        <button class="btn btn-outline-info" (click)="updateNotif()">Update</button>
+      </div>
+    </h5>
+    <br>
+    <p class="card-text">Price : {{produit.prixUnitaire}} DT</p>
+    &nbsp;
+      <button class="btn btn-warning" style="float: left" [routerLink]="['/ProductManagement/produit/detailProduit',produit.idProduit]" >
+      <img src="../../../assets/assets/images/detail.png">
+      Details
+    </button>
+    <button class="btn btn-info" style="float: right"  (click)="notifierParent()">
+      {{produit.nbLike}} <img src="../../../assets/assets/images/like.png">
+      Like
+    </button>
+
+  </div>
+</div>
