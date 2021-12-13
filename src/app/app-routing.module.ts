@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FactureComponent } from './facture/facture.component';
 import { HomeComponent } from './home/home.component';
 import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-import { StockComponent } from './stock/stock.component';
-import { ReclamationComponent } from './reclamation/reclamation.component';
-import { RayonComponent } from './rayon/rayon.component';
-import {MainUserComponent} from "./User/main-user/main-user.component";
-import {LoginComponent} from "./User/login/login.component";
-import {RegisterUserComponent} from "./User/register/register-user.component";
+import { StockComponent } from './stock-management/stock/stock.component';
+import { ReclamationComponent } from './reclamation-management/reclamation/reclamation.component';
+import { RayonComponent } from './rayon-management/rayon/rayon.component';
+import {MainUserComponent} from "./user-management/main-user/main-user.component";
+import {LoginComponent} from "./user-management/login/login.component";
+import {RegisterUserComponent} from "./user-management/register/register-user.component";
 
 
 const routes: Routes = [
