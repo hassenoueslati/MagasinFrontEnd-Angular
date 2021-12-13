@@ -1,0 +1,27 @@
+<br>
+&nbsp;
+<button class="btn btn-outline-primary" (click)="showForm()">{{buttonValue}}</button>
+<br>
+<br>
+<div *ngIf="!showFormTemplate">
+  <form class="search-bar">
+    <input  #query (keyup)="search(query.value)" type="text" class="form-control " placeholder="Search...">
+  </form>
+</div>
+<div *ngIf="showFormTemplate">
+  <h2 style="text-align: center">Form Produit</h2>
+  <app-fournisseur-form-add (addEvent)="save($event)" [fournisseur]="inputFournisseur" ></app-fournisseur-form-add>
+</div>
+<br>
+<br>
+<div class="row" *ngIf="!showFormTemplate">
+              <app-fournisseur *ngFor="let i of searchFournisseur"
+                               [fournisseur]="i"
+                               (deleteNotifEvent)="delete($event)"
+                               (updateNotifEvent)="update($event)"
+                               class="col-md-4"
+              ></app-fournisseur>
+
+</div>
+
+
