@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Rayon} from "../../model/Rayon";
-import {Produit} from "../../model/Produit";
 
 @Component({
   selector: 'app-rayon',
@@ -12,7 +11,7 @@ export class RayonComponent implements OnInit {
   @Output() notification = new EventEmitter<Rayon>();
   @Output() deleteNotifEvent = new EventEmitter<Rayon>();
   @Output() updateNotifEvent = new EventEmitter<Rayon>();
-  constructor( public produit : Produit) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
