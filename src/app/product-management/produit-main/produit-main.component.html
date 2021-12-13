@@ -1,0 +1,33 @@
+<br>
+&nbsp;
+<button class="btn btn-outline-primary" (click)="showForm()">{{buttonValue}}</button>
+<br>
+<br>
+<div *ngIf="!showFormTemplate">
+  <form class="search-bar">
+    <input  #query (keyup)="search(query.value)" type="text" class="form-control " placeholder="Search...">
+  </form>
+</div>
+<!-------------->
+<div style="text-align: right"  *ngIf="!showFormTemplate">
+  Sort by:
+  <a class="btn btn-secondary" (click)="TreeASC()"> Price ASC</a>
+  &nbsp;
+  <a class="btn btn-secondary" (click)="TreeDESC()"> Price DESC</a>
+</div>
+
+<div *ngIf="showFormTemplate">
+  <h2>Form Produit</h2>
+  <app-produit-form-add (addEvent)="save($event)" [produit]="inputProduit"></app-produit-form-add>
+</div>
+
+<div class="row" *ngIf="!showFormTemplate">
+  <app-produit *ngFor="let currentProduit of searchProduit"
+               [produit]="currentProduit"
+               (deleteNotifEvent)="delete($event)"
+               (updateNotifEvent)="update($event)"
+               (notification)="like($event)"
+               class="col-md-3" >
+  </app-produit>
+  &nbsp;
+</div>

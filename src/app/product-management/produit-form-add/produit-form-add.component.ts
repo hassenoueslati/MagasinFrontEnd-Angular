@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Produit} from "../model/Produit";
+import {Produit} from "../../model/Produit";
 
 @Component({
   selector: 'app-produit-form-add',
@@ -18,4 +18,5 @@ export class ProduitFormAddComponent implements OnInit {
     this.addEvent.emit(this.produit);
     this.produit = new Produit();
   }
+
 }

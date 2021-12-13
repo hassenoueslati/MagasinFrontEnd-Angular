@@ -1,0 +1,18 @@
+<div class="card" style="width: 20rem;" >
+    <div class="card-body">
+             <p><b class="mr-3">Code: </b>{{fournisseur.code}} </p>
+             <p><b class="mr-3">libelle : </b>{{fournisseur.libelle}}</p>
+      <div class="row mt-3">
+           <div class="col-sm-6">
+             <button class="btn btn-outline-danger" (click)="deleteNotif()">
+                delete
+             </button>
+           </div>
+           <div class="col-sm-6">
+             <button class="btn btn-outline-info" (click)="updateNotif()">
+                Update
+             </button>
+           </div>
+       </div>
+    </div>
+</div>
