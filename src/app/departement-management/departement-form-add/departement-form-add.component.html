@@ -1,0 +1,22 @@
+<form class="w-50 mx-auto" #a="ngForm">
+    <div class="form-group">
+      <label for="nomDepartement">nomDepartement </label>
+      <input type="text" name="nomDepartement" id="nomDepartement" class="form-control"
+             #nt="ngModel" required minlength="3" [(ngModel)]="departement.nomDepartement">
+      <div class="alert alert-danger" *ngIf="nt.touched&&nt.invalid">
+        <div *ngIf="nt.hasError('required')"> le nomDepartement est obligatoire</div>
+        <div *ngIf="nt.hasError('minlength')">La longueur minimale est de 3</div>
+      </div>
+    </div>
+  
+  
+    <br>
+    <button class="btn btn-outline-success" (click)="save()"
+            [disabled]="a.invalid">
+      save
+    </button>
+    &nbsp;
+    <button class="btn btn-outline-warning" (click)="a.reset()">reset</button>
+  </form>
+  
+  

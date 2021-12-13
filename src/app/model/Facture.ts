@@ -1,3 +1,4 @@
+import { DetailFacture } from "./DetailFacture";
 import { User } from "./User";
 
 export class Facture {
@@ -7,5 +8,6 @@ export class Facture {
   dateFacture : Date ;
   active :Boolean ;
   user : User;
+  detailFacture:DetailFacture[];
 
 }

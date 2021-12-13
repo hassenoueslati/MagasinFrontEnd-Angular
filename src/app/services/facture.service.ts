@@ -22,4 +22,14 @@ export class FactureService {
     return this.http.post<Facture>(this.url + 'add-facture', facture);
   }
   
+  findById(id: number): Observable<any> {
+    return this.http.get(`${this.url}retrieve-facture/${id}`);
+  }
+  updateFacturee(id: number,facture: Facture){
+    
+    return this.http.put<Facture>(this.url + 'updateFac/' + id, facture);
+  }
+  
+ 
+ 
 }
