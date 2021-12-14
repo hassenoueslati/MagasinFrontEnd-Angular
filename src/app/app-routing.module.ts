@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {NotFoundComponent} from "./not-found/not-found.component";
 const routes: Routes = [
+  {path: '', component:HomeComponent},
   {path: 'home', component: HomeComponent},
   { path: 'FactureManagement', loadChildren: () => import('./facture-management/facture-management.module').then(m => m.FactureManagementModule) },
   { path: 'DepartementManagement', loadChildren: () => import('./departement-management/departement-management.module').then(m => m.DepartementManagementModule) },
@@ -10,7 +12,8 @@ const routes: Routes = [
   { path: 'UserManagement', loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule) },
   { path: 'RayonManagement', loadChildren: () => import('./rayon-management/rayon-management.module').then(m => m.RayonManagementModule) },
   { path: 'StockManagement', loadChildren: () => import('./stock-management/stock-management.module').then(m => m.StockManagementModule) },
-  { path: 'ReclamationManagement', loadChildren: () => import('./reclamation-management/reclamation-management.module').then(m => m.ReclamationManagementModule) }
+  { path: 'ReclamationManagement', loadChildren: () => import('./reclamation-management/reclamation-management.module').then(m => m.ReclamationManagementModule) },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

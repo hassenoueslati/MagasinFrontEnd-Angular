@@ -26,45 +26,48 @@ export class FactureComponent implements OnInit {
    //ajout
    this.factureForm = this.fb.group({
     raison:[''],
-    
+
     montantRemise :[''],
     montantFacture : [''],
     dateFacture : [''],
     active :[''],
-   
-    
-    
-      
+
+
+
+
     });
    //datatable
    this.dtOptions = {
-      
-     
-    
-  
-    
- 
-    
+
+
+
+
+
+
+
     search:true,
       "ordering": true,
       "info":     true,
       retrieve: true,
   paging: true,
- 
-  
-  
+
+
+
       dom: 'Bfrtip',
       buttons: [
           'copy', 'csv', 'excel', 'pdf', 'print'
       ]
   };
- 
-    
+
+
     //affichage facture
-    this.factureService.AllFacture().subscribe(facture => this.listfacture = facture);
-      
-      
-    
+    this.factureService.AllFacture().subscribe(facture =>
+
+
+      this.listfacture = facture);
+
+
+
 
       }
 
@@ -84,14 +87,14 @@ export class FactureComponent implements OnInit {
       this.toastr.success("votre Facture a été enregistrée avec succès !!", "Facture");
       this.ngOnInit();
       window.location.reload();
-      
- 
+
+
     }
      //show form ajout
   showAddFacture() {
     this.show = !this.show;
   }
-    
+
   showSuccess(){
     this.toastr.success("votre Facture a été enregistrée avec succès !!", "Facture")
 }
@@ -99,7 +102,7 @@ list(){
   this.router.navigate(['FactureManagement/facture']);
 }
 //update
- // update 
+ // update
  updateFacture(id: number){
   this.router.navigate(['update-facture/', id]);
 }

@@ -23,6 +23,7 @@ import { DataTablesModule } from 'angular-datatables';
 
 
 import { ToastrModule } from 'ngx-toastr';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
     FooterComponent,
     WapperComponent,
     SidebarWrapperComponent,
+    NotFoundComponent,
   
     
   ],
